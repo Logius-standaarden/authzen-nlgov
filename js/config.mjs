@@ -3,13 +3,11 @@ import { loadRespecWithConfiguration } from "https://logius-standaarden.github.i
 loadRespecWithConfiguration({
   specStatus: "WV",
   specType: "ST",
-  pubDomain: "dk",
-  shortName: "authzen-nlgov",
+  pubDomain: "api",
+  shortName: "authzen",
   publishDate: "2025-07-01",
   publishVersion: "0.0.1",
-  previousPublishVersion: null,
-  previousPublishDate: null,
-  previousMaturity: "WV",
+  previousPublishVersion: [],
   editors:
     [
       {
@@ -26,7 +24,7 @@ loadRespecWithConfiguration({
         companyURL: "https://vng-realisatie.github.io/ftv",
       }
     ],
-  github: "https://github.com/vng-realisatie/authzen-nlgov",
+  github: "https://github.com/Logius-standaarden/authzen-nlgov",
   localBiblio: {
         "XACML": {
             href: "https://www.oasis-open.org/committees/xacml/repository/cs-xacml-specification-1.1.pdf",

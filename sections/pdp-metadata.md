@@ -45,7 +45,7 @@ The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-kno
 
 ### Policy Decision Point Metadata Request {#pdp-metadata-access-request}
 
-A policy decision point metadata document MUST be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is <https://pdp.mycompany.com>:
+A policy decision point metadata document MUST be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is `https://pdp.mycompany.com`:
 
 ``` http
 GET /.well-known/authzen-configuration HTTP/1.1

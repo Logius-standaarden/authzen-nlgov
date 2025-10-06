@@ -11,23 +11,6 @@ let respecConfig = {
   previousPublishVersion: null,
   previousPublishDate: null,
   previousMaturity: "WV",
-  title: "NLGov Profile for OpenID AuthZEN Authorization API",
-  content: {
-    "introduction":"introduction",
-    "model": "model",
-    "features": "features",
-    "api-version": "api-version",
-    "information-model": "information-model",
-    "access-evaluation-api": "access-evaluation-api",
-    "access-evaluations-api": "access-evaluations-api",
-    "subject-search-api": "subject-search-api",
-    "resource-search-api": "resource-search-api",
-    "action-search-api": "action-search-api",
-    "pdp-metadata": "pdp-metadata",
-    "transport": "transport",
-    "security": "security",
-    "iana": "iana"
-  },
   editors:
     [
       {

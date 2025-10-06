@@ -1,4 +1,5 @@
 # Features
+
 The core feature of the Authorization API is the Access Evaluation API, which enables a PEP to find out if a specific request can be permitted to access a specific resource. The following are non-normative examples:
 
 - Can Alice view document #123?

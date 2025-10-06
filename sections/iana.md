@@ -3,7 +3,7 @@
 
 The following registration procedure is used for the registry established by this specification.
 
-Values are registered on a Specification Required [[RFC8126]] basis after a two-week review period on the openid-specs-authzen@lists.openid.net mailing list, on the advice of one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
+Values are registered on a Specification Required [[RFC8126]] basis after a two-week review period on the <openid-specs-authzen@lists.openid.net> mailing list, on the advice of one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
 
 Registration requests sent to the mailing list for review should use an appropriate subject (e.g., "Request to register AuthZEN Policy Decision Point Metadata: example").
 
@@ -48,9 +48,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Metadata name:
 : `access_evaluation_endpoint`
@@ -63,9 +61,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Metadata name:
 : `access_evaluations_endpoint`
@@ -78,9 +74,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Metadata name:
 : `search_subject_endpoint`
@@ -93,10 +87,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-
-
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Metadata name:
 : `search_resource_endpoint`
@@ -109,9 +100,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Metadata name:
 : `signed_metadata`
@@ -124,9 +113,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [](#pdp-metadata-data-endpoint)
-      
-
+: Section \[\#pdp-metadata-data-endpoint\]
 
 ## Well-Known URI Registry {#iana-wk-registry}
 
@@ -138,7 +125,7 @@ URI Suffix:
 : authzen-configuration
 
 Reference:
-: Section [](#pdp-metadata-data-endpoint)
+: Section \[\#pdp-metadata-data-endpoint\]
 
 Status:
 : permanent

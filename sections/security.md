@@ -4,8 +4,8 @@
 
 In the ABAC architecture, the PEP-PDP connection is the most sensitive one and needs to be secured to guarantee:
 
- - Integrity
- - Confidentiality
+- Integrity
+- Confidentiality
 
 As a result, the connection between the PEP and the PDP MUST be secured using the most adequate means given the choice of transport (e.g. TLS for HTTP REST).
 
@@ -13,9 +13,9 @@ As a result, the connection between the PEP and the PDP MUST be secured using th
 
 Additionally, the PDP SHOULD authenticate <span class="nlgov-add">requests from</span>the <span class="nlgov-del">calling</span> PEP. There are several ways authentication can be established. These ways are out of scope of this specification. They MAY include:
 
- - Mutual TLS
- - OAuth-based authentication
- - API key
+- Mutual TLS
+- OAuth-based authentication
+- API key
 
 The choice and strength of either mechanism is not in scope.
 
@@ -36,5 +36,4 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 
 ## Metadata Caching {#security-metadata-caching}
 
-Policy decision point metadata is retrieved using an HTTP GET request, as specified in [](#pdp-metadata-access-request). Normal HTTP caching behaviors apply, meaning that the GET may retrieve a cached copy of the content, rather than the latest copy. Implementations should utilize HTTP caching directives such as Cache-Control with max-age, as defined in [[RFC7234]], to enable caching of retrieved metadata for appropriate time periods.
-
+Policy decision point metadata is retrieved using an HTTP GET request, as specified in \[\#pdp-metadata-access-request\]. Normal HTTP caching behaviors apply, meaning that the GET may retrieve a cached copy of the content, rather than the latest copy. Implementations should utilize HTTP caching directives such as Cache-Control with max-age, as defined in [[RFC7234]], to enable caching of retrieved metadata for appropriate time periods.

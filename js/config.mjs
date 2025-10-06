@@ -7,7 +7,7 @@ loadRespecWithConfiguration({
   shortName: "authzen",
   publishDate: "2025-07-01",
   publishVersion: "0.0.1",
-  previousPublishVersion: [],
+  //previousPublishVersion: [],
   editors:
     [
       {

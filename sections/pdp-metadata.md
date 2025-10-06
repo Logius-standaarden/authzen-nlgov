@@ -9,7 +9,7 @@ The following Policy Decision Point metadata parameters are used by this specifi
 ### Endpoint Parameters {#pdp-metadata-data-endpoint}
 
 `policy_decision_point`:
-: REQUIRED. The policy decision point's policy decision point identifier, which is a URL that uses the "https" scheme and has no query or fragment components. Policy Decision Point metadata is published at a location that is ".well-known" according to [[RFC5785]] derived from this policy decision point identifier, as described in [](pdp-metadata-access#). The policy decision point identifier is used to prevent policy decision point mix-up attacks.
+: REQUIRED. The policy decision point's policy decision point identifier, which is a URL that uses the "https" scheme and has no query or fragment components. Policy Decision Point metadata is published at a location that is ".well-known" according to [[RFC5785]] derived from this policy decision point identifier, as described in [[[#pdp-metadata-access]]]. The policy decision point identifier is used to prevent policy decision point mix-up attacks.
 
 `access_evaluation_endpoint`:
 : REQUIRED. URL of Policy Decision Point Access Evaluation API endpoint

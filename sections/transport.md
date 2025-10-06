@@ -8,7 +8,7 @@ Additional transport bindings (e.g. gRPC) MAY be defined in the future in the fo
 
 ### HTTPS Access Evaluation Request
 
-The Access Evaluation Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluation Request, as defined in \[\#access-evaluation-request\].
+The Access Evaluation Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluation Request, as defined in [#access-evaluation-request].
 
 The following is a non-normative example of the HTTPS binding of the Access Evaluation Request:
 
@@ -38,7 +38,7 @@ Authorization: Bearer &lt;myoauthtoken&gt;
 
 ### HTTPS Access Evaluation Response
 
-The success response to an Access Evaluation Request is an Access Evaluation Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluation Response, as defined in \[\#access-evaluation-response\].
+The success response to an Access Evaluation Request is an Access Evaluation Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluation Response, as defined in [#access-evaluation-response].
 
 Following is a non-normative example of an HTTPS Access Evaluation Response:
 
@@ -54,7 +54,7 @@ Content-type: application/json
 
 ### HTTPS Access Evaluations Request
 
-The Access Evaluations Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluations Request, as defined in \[\#access-evaluations-request\].
+The Access Evaluations Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluations Request, as defined in [#access-evaluations-request].
 
 The following is a non-normative example of a the HTTPS binding of the Access Evaluations Request:
 
@@ -103,7 +103,7 @@ Authorization: Bearer &lt;myoauthtoken&gt;
 
 ### HTTPS Access Evaluations Response
 
-The success response to an Access Evaluations Request is an Access Evaluations Response. It is a HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluations Response, as defined in \[\#access-evaluations-response\].
+The success response to an Access Evaluations Request is an Access Evaluations Response. It is a HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Access Evaluations Response, as defined in [#access-evaluations-response].
 
 The following is a non-normative example of an HTTPS Access Evaluations Response:
 
@@ -138,7 +138,7 @@ Content-type: application/json
 
 ### HTTPS Subject Search Request
 
-The Subject Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Subject Search Request, as defined in \[\#subject-search-request\].
+The Subject Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Subject Search Request, as defined in [#subject-search-request].
 
 The following is a non-normative example of the HTTPS binding of the Subject Search Request:
 
@@ -164,7 +164,7 @@ Authorization: Bearer &lt;myoauthtoken&gt;
 
 ### HTTPS Subject Search Response
 
-The success response to a Subject Search Request is a Subject Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Subject Search Response, as defined in \[\#subject-search-response\].
+The success response to a Subject Search Request is a Subject Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Subject Search Response, as defined in [#subject-search-response].
 
 The following is a non-normative example of an HTTPS Subject Search Response:
 
@@ -192,7 +192,7 @@ Content-type: application/json
 
 ### HTTPS Resource Search Request
 
-The Resource Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Resource Search Request, as defined in \[\#resource-search-request\].
+The Resource Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Resource Search Request, as defined in [#resource-search-request].
 
 The following is a non-normative example of the HTTPS binding of the Resource Search Request:
 
@@ -218,7 +218,7 @@ Authorization: Bearer &lt;myoauthtoken&gt;
 
 ### HTTPS Resource Search Response
 
-The success response to a Resource Search Request is a Resource Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Resource Search Response, as defined in \[\#resource-search-response\].
+The success response to a Resource Search Request is a Resource Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Resource Search Response, as defined in [#resource-search-response].
 
 The following is a non-normative example of an HTTPS Resource Search Response:
 
@@ -246,7 +246,7 @@ Content-type: application/json
 
 ### HTTPS Action Search Request
 
-The Action Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Action Search Request, as defined in \[\#action-search-request\].
+The Action Search Request is an HTTPS request with `content-type` of `application/json`. Its body is a JSON object that contains the Action Search Request, as defined in [#action-search-request].
 
 The following is a non-normative example of the HTTPS binding of the Action Search Request:
 
@@ -273,7 +273,7 @@ Authorization: Bearer &lt;myoauthtoken&gt;
 
 ### HTTPS Action Search Response
 
-The success response to an Action Search Request is an Action Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Action Search Response, as defined in \[\#action-search-response\].
+The success response to an Action Search Request is an Action Search Response. It is an HTTPS response with a `status` code of `200`, and `content-type` of `application/json`. Its body is a JSON object that contains the Action Search Response, as defined in [#action-search-response].
 
 The following is a non-normative example of an HTTPS Action Search Response:
 

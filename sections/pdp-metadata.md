@@ -4,7 +4,7 @@ Policy Decision Points can have metadata describing their configuration.
 
 ## Data structure {#pdp-metadata-data}
 
-The following Policy Decision Point metadata parameters are used by this specification and are registered in the IANA "AuthZEN PDP Metadata" registry established in \[\#iana-pdp-registry\].
+The following Policy Decision Point metadata parameters are used by this specification and are registered in the IANA "AuthZEN PDP Metadata" registry established in [#iana-pdp-registry].
 
 ### Endpoint Parameters {#pdp-metadata-data-endpoint}
 
@@ -30,7 +30,7 @@ Note that the non presence of any of those parameter is sufficient for the polic
 
 ### Signature Parameter {#pdp-metadata-data-sig}
 
-In addition to JSON elements, metadata values MAY also be provided as a `signed_metadata` value, which is a JSON Web Token [[RFC7519]] that asserts metadata values about the policy decision point as a bundle. A set of metadata parameters that can be used in signed metadata as claims are defined in \[\#pdp-metadata-data-endpoint\]. The signed metadata MUST be digitally signed or MACed using JSON Web Signature [[RFC7515]] and MUST contain an `iss` (issuer) claim denoting the party attesting to the claims in the signed metadata.
+In addition to JSON elements, metadata values MAY also be provided as a `signed_metadata` value, which is a JSON Web Token [[RFC7519]] that asserts metadata values about the policy decision point as a bundle. A set of metadata parameters that can be used in signed metadata as claims are defined in [#pdp-metadata-data-endpoint]. The signed metadata MUST be digitally signed or MACed using JSON Web Signature [[RFC7515]] and MUST contain an `iss` (issuer) claim denoting the party attesting to the claims in the signed metadata.
 
 Consumers of the metadata MAY ignore the signed metadata if they do not support this feature. If the consumer of the metadata supports signed metadata, metadata values conveyed in the signed metadata MUST take precedence over the corresponding values conveyed using plain JSON elements. Signed metadata is included in the policy decision point metadata JSON object using this OPTIONAL metadata parameter:
 
@@ -39,7 +39,7 @@ Consumers of the metadata MAY ignore the signed metadata if they do not support 
 
 ## Obtaining Policy Decision Point Metadata {#pdp-metadata-access}
 
-Policy Decision Point supporting metadata MUST make a JSON document containing metadata as specified in \[\#pdp-metadata-data-endpoint\] available at a URL formed by inserting a well-known URI string between the host component and the path and/or query components, if any. The well-known URI string used is `/.well-known/authzen-configuration`.
+Policy Decision Point supporting metadata MUST make a JSON document containing metadata as specified in [#pdp-metadata-data-endpoint] available at a URL formed by inserting a well-known URI string between the host component and the path and/or query components, if any. The well-known URI string used is `/.well-known/authzen-configuration`.
 
 The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-known URI path suffix used is registered in the IANA "Well-Known URIs" registry [[IANA.well-known-uris]].
 
@@ -54,7 +54,7 @@ Host: pdp.mycompany.com
 
 ### Policy Decision Point Metadata Response {#pdp-metadata-access-response}
 
-The response is a set of metadata parameters about the protected resource's configuration. A successful response MUST use the `200 OK HTTP` status code and return a JSON object using the `application/json` content type that contains a set of metadata parameters as its members that are a subset of the metadata parameters defined in \[\#pdp-metadata-data-endpoint\]. Additional metadata parameters MAY be defined and used; any metadata parameters that are not understood MUST be ignored.
+The response is a set of metadata parameters about the protected resource's configuration. A successful response MUST use the `200 OK HTTP` status code and return a JSON object using the `application/json` content type that contains a set of metadata parameters as its members that are a subset of the metadata parameters defined in [#pdp-metadata-data-endpoint]. Additional metadata parameters MAY be defined and used; any metadata parameters that are not understood MUST be ignored.
 
 Parameters with multiple values are represented as JSON arrays. Parameters with zero values MUST be omitted from the response.
 

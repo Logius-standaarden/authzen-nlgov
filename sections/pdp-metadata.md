@@ -47,10 +47,10 @@ The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-kno
 
 A policy decision point metadata document MUST be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is <https://pdp.mycompany.com>:
 
-~~~ http
+``` http
 GET /.well-known/authzen-configuration HTTP/1.1
 Host: pdp.mycompany.com
-~~~
+```
 
 ### Policy Decision Point Metadata Response {#pdp-metadata-access-response}
 
@@ -62,7 +62,7 @@ An error response uses the applicable HTTP status code value.
 
 The following is a non-normative example response:
 
-~~~ http
+``` http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -72,7 +72,7 @@ Content-Type: application/json
   "search_subject_endpoint": "https://pdp.mycompany.com/access/v1/search/subject",
   "search_resource_endpoint": "https://pdp.mycompany.com/access/v1/search/resource"
 }
-~~~
+```
 
 ### Policy Decision Point Metadata Validation {#pdp-metadata-data-endpoint-validation}
 

@@ -52,7 +52,7 @@ The following payload defines a request for the resources of type `account` on w
 
 The response is a paged array of Resources.
 
-~~~ json
+``` json
 {
   "results": [
     {
@@ -68,7 +68,7 @@ The response is a paged array of Resources.
     "next_token": ""
   }
 }
-~~~
+```
 
 ### Paged requests
 
@@ -76,7 +76,7 @@ A response that needs to be split across page boundaries returns a non-empty `pa
 
 #### Example
 
-~~~ json
+``` json
 {
   "results": [
     {
@@ -92,11 +92,11 @@ A response that needs to be split across page boundaries returns a non-empty `pa
     "next_token": "alsehrq3495u8"
   }
 }
-~~~
+```
 
 To retrieve the next page, provide `page.next_token` in the next request:
 
-~~~ json
+``` json
 {
   "subject": {
     "type": "user",
@@ -112,6 +112,6 @@ To retrieve the next page, provide `page.next_token` in the next request:
     "next_token": "alsehrq3495u8"
   }
 }
-~~~
+```
 
 Note: page size is implementation-dependent.

@@ -16,7 +16,7 @@ If the `evaluations` array IS present and contains one or more objects, the top-
 
 The following is a non-normative example for specifying three requests, with no default values:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -69,7 +69,7 @@ The following is a non-normative example for specifying three requests, with no 
     }
   ]
 }
-~~~
+```
 
 ### Default values
 
@@ -81,7 +81,7 @@ If any of the top-level `subject`, `action`, `resource`, and `context` keys are 
 
 The following is a non-normative example for specifying three requests that refer to a single subject and context:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -120,11 +120,11 @@ The following is a non-normative example for specifying three requests that refe
     }
   ]
 }
-~~~
+```
 
 The following is a non-normative example for specifying three requests that refer to a single `subject` and `context`, with a default value for `action`, that is overridden by the third request:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -160,7 +160,7 @@ The following is a non-normative example for specifying three requests that refe
     }
   ]
 }
-~~~
+```
 
 ### Evaluations options
 
@@ -172,7 +172,7 @@ One such option controls *evaluation semantics*, and is described in [[[#evaluat
 
 A non-normative example of the `options` field is shown below, following an `evaluations` array provided for the sake of completeness:
 
-~~~json
+```json
 {
   "evaluations": [{
     "resource": {
@@ -189,7 +189,7 @@ A non-normative example of the `options` field is shown below, following an `eva
     "another_option": "value"
   }
 }
-~~~
+```
 
 #### Evaluations semantics {#evaluation-semantics}
 
@@ -213,7 +213,7 @@ To select the desired evaluations semantic, a caller can pass in `options.evalua
 
 Execute all requests:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -246,11 +246,11 @@ Execute all requests:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -264,11 +264,11 @@ Response:
     }
   ]
 }
-~~~
+```
 
 Deny on first deny:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -301,11 +301,11 @@ Deny on first deny:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -320,11 +320,11 @@ Response:
     }
   ]
 }
-~~~
+```
 
 Permit on first permit:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -357,11 +357,11 @@ Permit on first permit:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -369,17 +369,17 @@ Response:
     }
   ]
 }
-~~~
+```
 
 ## Access Evaluations API Response {#access-evaluations-response}
 
-Like the request format, the Access Evaluations Response format for an Access Evaluations Request adds an `evaluations` array that lists the decisions in the same order they were provided in the `evaluations` array in the request. Each value of the evaluations array is typed as an [Access Evaluation Response](#access-evaluation-response).
+Like the request format, the Access Evaluations Response format for an Access Evaluations Request adds an `evaluations` array that lists the decisions in the same order they were provided in the `evaluations` array in the request. Each value of the evaluations array is typed as an Access Evaluation Response ([[[#access-evaluation-response]]]).
 
 In case the `evaluations` array is present, it is RECOMMENDED that the `decision` key of the response will be omitted. If present, it can be ignored by the caller.
 
 The following is a non-normative example of a Access Evaluations Response to an Access Evaluations Request containing three evaluation objects:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -399,7 +399,7 @@ The following is a non-normative example of a Access Evaluations Response to an 
     }
   ]
 }
-~~~
+```
 
 ### Errors
 
@@ -414,7 +414,7 @@ The second type of error is handled at the payload level. Decisions default to *
 
 The following is a non-normative example of a response to an Access Evaluations Request containing three evaluation objects, two of them demonstrating how errors can be returned for two of the evaluation requests:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -437,4 +437,4 @@ The following is a non-normative example of a response to an Access Evaluations 
     }
   ]
 }
-~~~
+```

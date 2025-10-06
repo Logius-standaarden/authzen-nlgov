@@ -7,7 +7,9 @@ loadRespecWithConfiguration({
   shortName: "authzen",
   publishDate: "2025-07-01",
   publishVersion: "0.0.1",
-  //previousPublishVersion: [],
+  // TODO: verwijder voor publicatie
+  latestVersion: "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+  prevVersion: [],
   editors:
     [
       {

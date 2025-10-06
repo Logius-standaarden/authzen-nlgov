@@ -105,10 +105,10 @@ A Reason Object specifies a particular reason. It is a JSON object that has the 
 : REQUIRED. A string value that specifies the reason within the scope of a particular response.
 
 `reason_admin`:
-: OPTIONAL. The reason, which MUST NOT be shared with the user, but useful for administrative purposes that indicates why the access was denied. The value of this field is a Reason Field object ([#reason-field]).
+: OPTIONAL. The reason, which MUST NOT be shared with the user, but useful for administrative purposes that indicates why the access was denied. The value of this field is a [Reason Field](#reason-field) object.
 
 `reason_user`:
-: OPTIONAL. The reason, which MAY be shared with the user that indicates why the access was denied. The value of this field is a Reason Field object ([#reason-field]).
+: OPTIONAL. The reason, which MAY be shared with the user that indicates why the access was denied. The value of this field is a [Reason Field](#reason-field) object.
 
 The following is a non-normative example of a Reason Object:
 

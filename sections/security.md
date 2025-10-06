@@ -36,4 +36,4 @@ When using unsigned metadata, the party issuing the metadata is the policy decis
 
 ## Metadata Caching {#security-metadata-caching}
 
-Policy decision point metadata is retrieved using an HTTP GET request, as specified in [#pdp-metadata-access-request]. Normal HTTP caching behaviors apply, meaning that the GET may retrieve a cached copy of the content, rather than the latest copy. Implementations should utilize HTTP caching directives such as Cache-Control with max-age, as defined in [[RFC7234]], to enable caching of retrieved metadata for appropriate time periods.
+Policy decision point metadata is retrieved using an HTTP GET request, as specified in [[[#pdp-metadata-access-request]]]. Normal HTTP caching behaviors apply, meaning that the GET may retrieve a cached copy of the content, rather than the latest copy. Implementations should utilize HTTP caching directives such as Cache-Control with max-age, as defined in [[RFC7234]], to enable caching of retrieved metadata for appropriate time periods.

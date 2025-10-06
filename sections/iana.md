@@ -48,7 +48,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Metadata name:
 : `access_evaluation_endpoint`
@@ -61,7 +61,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Metadata name:
 : `access_evaluations_endpoint`
@@ -74,7 +74,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Metadata name:
 : `search_subject_endpoint`
@@ -87,7 +87,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Metadata name:
 : `search_resource_endpoint`
@@ -100,7 +100,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Metadata name:
 : `signed_metadata`
@@ -113,7 +113,7 @@ Change Controller:
 : mailto:openid-specs-authzen@lists.openid.net
 
 Specification Document(s):
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 ## Well-Known URI Registry {#iana-wk-registry}
 
@@ -125,7 +125,7 @@ URI Suffix:
 : authzen-configuration
 
 Reference:
-: Section [#pdp-metadata-data-endpoint]
+: [[[#pdp-metadata-data-endpoint]]]
 
 Status:
 : permanent

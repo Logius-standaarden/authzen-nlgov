@@ -152,7 +152,7 @@ The following is a non-normative example of an action:
 
 #### <span class="nlgov-add">Processing Activity and Algorithm identifiers</span>
 
-<span class="nlgov-add">Under Dutch and EU legislation every action SHOULD include a relation to the processing activity - or algorithm under which it is performed. These identifiers SHOULD be included in the action properties and MUST use the property names as defined in [[Logboek dataverwerkingen]] standard and its extensions.</span>
+<span class="nlgov-add">Under Dutch and EU legislation every action SHOULD include a relation to the processing activity - or algorithm under which it is performed. These identifiers SHOULD be included in the action properties and MUST use the property names as defined in [[[logboek dataverwerkingen]]] standard and its extensions.</span>
 
 ## Context {#context}
 
@@ -178,7 +178,7 @@ The following is a non-normative example of a Context:
 
 <span class="nlgov-add">The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].</span>
 
-<span class="nlgov-add">This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[REST API Design Rules]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).</span>
+<span class="nlgov-add">This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).</span>
 
 #### <span class="nlgov-add">W3C Trace Context</span>
 

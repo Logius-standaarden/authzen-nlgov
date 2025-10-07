@@ -117,7 +117,7 @@ Specification Document(s):
 
 ## Well-Known URI Registry {#iana-wk-registry}
 
-This specification registers the well-known URI defined in Section 3 in the IANA "Well-Known URIs" registry [[IANA.well-known-uris]].
+This specification registers the well-known URI defined in Section 3 in the [[[IANA.well-known-uris]]].
 
 ### Registry Contents {#iana-wk-registry-content}
 

@@ -41,7 +41,7 @@ Consumers of the metadata MAY ignore the signed metadata if they do not support 
 
 Policy Decision Point supporting metadata MUST make a JSON document containing metadata as specified in [[[#pdp-metadata-data-endpoint]]] available at a URL formed by inserting a well-known URI string between the host component and the path and/or query components, if any. The well-known URI string used is `/.well-known/authzen-configuration`.
 
-The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-known URI path suffix used is registered in the IANA "Well-Known URIs" registry [[IANA.well-known-uris]].
+The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-known URI path suffix used is registered in the [[[IANA.well-known-uris]]].
 
 ### Policy Decision Point Metadata Request {#pdp-metadata-access-request}
 

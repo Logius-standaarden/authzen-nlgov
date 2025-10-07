@@ -45,7 +45,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -58,7 +58,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -71,7 +71,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -84,7 +84,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -97,7 +97,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -110,7 +110,7 @@ Metadata description:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]]
@@ -132,7 +132,7 @@ Status:
 
 Change Controller:
 : OpenID_Foundation_AuthZEN_Working_Group
-: mailto:openid-specs-authzen@lists.openid.net
+: <openid-specs-authzen@lists.openid.net>
 
 Related Information:
 : (none)

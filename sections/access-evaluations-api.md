@@ -4,19 +4,19 @@ The Access Evaluations API defines the message exchange pattern between a client
 
 ## The Access Evaluations API Request {#access-evaluations-request}
 
-The Access Evaluation API Request builds on the information model presented in [](#information-model) and the 4-tuple defined in the Access Evaluation Request ([](#access-evaluation-request)).
+The Access Evaluation API Request builds on the information model presented in [[[#information-model]]] and the 4-tuple defined in [[[#access-evaluation-request]]].
 
-To send multiple access evaluation requests in a single message, the caller MAY add an `evaluations` key to the request. The `evaluations` key is an array which contains a list of JSON objects, each typed as the 4-tuple as defined in the Access Evaluation Request ([](#access-evaluation-request)), and specifying a discrete request.
+To send multiple access evaluation requests in a single message, the caller MAY add an `evaluations` key to the request. The `evaluations` key is an array which contains a list of JSON objects, each typed as the 4-tuple as defined defined in [[[#access-evaluation-request]]], and specifying a discrete request.
 
-If an `evaluations` array is NOT present, the Access Evaluations Request behaves in a backwards-compatible manner with the (single) Access Evaluation API Request ([](#access-evaluation-request)).
+If an `evaluations` array is NOT present, the Access Evaluations Request behaves in a backwards-compatible manner with the (single) Access Evaluation API Request.
 
 If an `evaluations` array IS present and contains one or more objects, these form distinct requests that the PDP will evaluate. These requests are independent from each other, and may be executed sequentially or in parallel, left to the discretion of each implementation.
 
-If the `evaluations` array IS present and contains one or more objects, the top-level `subject`, `action`, `resource`, and `context` keys (4-tuple) in the request object MAY be omitted. However, if one or more of these values is present, they provide default values for their respective fields in the evaluation requests. This behavior is described in [](#default-values).
+If the `evaluations` array IS present and contains one or more objects, the top-level `subject`, `action`, `resource`, and `context` keys (4-tuple) in the request object MAY be omitted. However, if one or more of these values is present, they provide default values for their respective fields in the evaluation requests. This behavior is described in [[[#default-values]]].
 
 The following is a non-normative example for specifying three requests, with no default values:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -69,7 +69,7 @@ The following is a non-normative example for specifying three requests, with no 
     }
   ]
 }
-~~~
+```
 
 ### Default values
 
@@ -81,7 +81,7 @@ If any of the top-level `subject`, `action`, `resource`, and `context` keys are 
 
 The following is a non-normative example for specifying three requests that refer to a single subject and context:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -120,11 +120,11 @@ The following is a non-normative example for specifying three requests that refe
     }
   ]
 }
-~~~
+```
 
 The following is a non-normative example for specifying three requests that refer to a single `subject` and `context`, with a default value for `action`, that is overridden by the third request:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -160,7 +160,7 @@ The following is a non-normative example for specifying three requests that refe
     }
   ]
 }
-~~~
+```
 
 ### Evaluations options
 
@@ -168,11 +168,11 @@ The `evaluations` request payload includes an OPTIONAL `options` key, with a JSO
 
 This provides a general-purpose mechanism for providing caller-supplied metadata on how the request is to be executed.
 
-One such option controls *evaluation semantics*, and is described in [](#evaluation-semantics).
+One such option controls *evaluation semantics*, and is described in [[[#evaluation-semantics]]].
 
 A non-normative example of the `options` field is shown below, following an `evaluations` array provided for the sake of completeness:
 
-~~~json
+```json
 {
   "evaluations": [{
     "resource": {
@@ -189,7 +189,7 @@ A non-normative example of the `options` field is shown below, following an `eva
     "another_option": "value"
   }
 }
-~~~
+```
 
 #### Evaluations semantics {#evaluation-semantics}
 
@@ -203,9 +203,9 @@ With that said, three evaluation semantics are supported:
 
 To select the desired evaluations semantic, a caller can pass in `options.evaluations_semantic` with exactly one of the following values:
 
-  * `execute_all`
-  * `deny_on_first_deny`
-  * `permit_on_first_permit`
+* `execute_all`
+* `deny_on_first_deny`
+* `permit_on_first_permit`
 
 `execute_all` is the default semantic, so an `evaluations` request without the `options.evaluations_semantic` flag will execute using this semantic.
 
@@ -213,7 +213,7 @@ To select the desired evaluations semantic, a caller can pass in `options.evalua
 
 Execute all requests:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -246,11 +246,11 @@ Execute all requests:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -264,11 +264,11 @@ Response:
     }
   ]
 }
-~~~
+```
 
 Deny on first deny:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -301,11 +301,11 @@ Deny on first deny:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -320,11 +320,11 @@ Response:
     }
   ]
 }
-~~~
+```
 
 Permit on first permit:
 
-~~~json
+```json
 {
   "subject": {
     "type": "user",
@@ -357,11 +357,11 @@ Permit on first permit:
     }
   ]
 }
-~~~
+```
 
 Response:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -369,17 +369,17 @@ Response:
     }
   ]
 }
-~~~
+```
 
 ## Access Evaluations API Response {#access-evaluations-response}
 
-Like the request format, the Access Evaluations Response format for an Access Evaluations Request adds an `evaluations` array that lists the decisions in the same order they were provided in the `evaluations` array in the request. Each value of the evaluations array is typed as an Access Evaluation Response ([](#access-evaluation-response)).
+Like the request format, the Access Evaluations Response format for an Access Evaluations Request adds an `evaluations` array that lists the decisions in the same order they were provided in the `evaluations` array in the request. Each value of the evaluations array is typed as an Access Evaluation Response ([[[#access-evaluation-response]]]).
 
 In case the `evaluations` array is present, it is RECOMMENDED that the `decision` key of the response will be omitted. If present, it can be ignored by the caller.
 
 The following is a non-normative example of a Access Evaluations Response to an Access Evaluations Request containing three evaluation objects:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -399,21 +399,22 @@ The following is a non-normative example of a Access Evaluations Response to an 
     }
   ]
 }
-~~~
+```
 
 ### Errors
 
 There are two types of errors, and they are handled differently:
+
 1. Transport-level errors, or errors that pertain to the entire payload.
 2. Errors in individual evaluations.
 
-The first type of error is handled at the transport level. For example, for the HTTP binding, the 4XX and 5XX codes indicate a general error that pertains to the entire payload, as described in Transport ([](#transport)).
+The first type of error is handled at the transport level. For example, for the HTTP binding, the 4XX and 5XX codes indicate a general error that pertains to the entire payload, as described in [[[#transport]]].
 
 The second type of error is handled at the payload level. Decisions default to *closed* (i.e. `false`), but the `context` field can include errors that are specific to that request.
 
 The following is a non-normative example of a response to an Access Evaluations Request containing three evaluation objects, two of them demonstrating how errors can be returned for two of the evaluation requests:
 
-~~~json
+```json
 {
   "evaluations": [
     {
@@ -436,4 +437,4 @@ The following is a non-normative example of a response to an Access Evaluations 
     }
   ]
 }
-~~~
+```

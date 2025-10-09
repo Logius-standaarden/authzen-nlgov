@@ -1,82 +1,68 @@
-# Information Model
+# Information Model {#information-model}
 
 The information model for requests and responses include the following entities: Subject, Action, Resource, Context, and Decision. These are all defined below.
 
-<span class="nlgov-add">The information model SHOULD be incorporated into the meta-information model of the organization according to [[MIM]]. It is RECOMMENDED to use [[JSON-LD11]] to enable automatic integration into existing semantic models</span>
+<span class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[MIM]].</span>
+
+<span class="nlgov-add">It is RECOMMENDED to use [[JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</span>
 
 ## Subject {#subject}
 
 A Subject is the user or machine principal about whom the Authorization API is being invoked. The Subject may be requesting access at the time the Authorization API is invoked.
 
-A Subject is a JSON ([[RFC8259]]) object that contains two REQUIRED keys, `type` and `id`, which have a value typed `string`, and an OPTIONAL key, `properties`, with a value of a JSON object. <span class="nlgov-add">The Subject MAY contain [[JSON-LD11]] keys starting with the `@`-symbol.</span>
+A Subject is an object that contains two REQUIRED keys, `type` and `id`, which have a string value, and an OPTIONAL key, `properties`, with a value of an object.
 
 `type`:
-: REQUIRED. A `string` value that specifies the type of the Subject.
+: REQUIRED. A string value that specifies the type of the Subject. <span class="nlgov-add">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
-: REQUIRED. A `string` value containing the unique identifier of the Subject, scoped to the `type`.
+: REQUIRED. A string value containing the unique identifier of the Subject, scoped to the `type`.
 
 `properties`:
-: OPTIONAL. A JSON object containing any number of key-value pairs, which can be used to express additional properties of a Subject.
+: OPTIONAL. An object which can be used to express additional attributes of a Subject.
 
-The following is a non-normative example of a Subject:
+
+### Subject Properties {#subject-properties}
+
+Many authorization systems are stateless, and expect the PEP to pass in all relevant attributes used in the evaluation of the authorization policy. To satisfy this requirement, Subjects MAY include additional attributes as key-value pairs, under the `properties` object. A property can contain both simple values, such as strings, numbers, booleans and nulls, and complex values, such as arrays and objects.
+
+Examples of subject attributes can include, but are not limited to:
+
+- department,
+- group memberships,
+- device identifier,
+- IP address.
+
+### Examples (non-normative) {#subject-examples}
+
+The following is a non-normative example of a minimal Subject:
 
 <pre class="json example" id="subject-example" title="Example Subject">
 {
   "type": "user",
-  "id": "alice@acmecorp.com"
+  "id": "alice@example.com"
 }
 </pre>
-
-### Subject Properties {#subject-properties}
-
-Many authorization systems are stateless, and expect the client (PEP) to pass in any properties or attributes that are expected to be used in the evaluation of the authorization policy. To satisfy this requirement, Subjects MAY include zero or more additional attributes as key-value pairs, under the `properties` object.
-
-An attribute can be single-valued or multi-valued. It can be a primitive type (string, boolean, number) or a complex type such as a JSON object or JSON array.
 
 The following is a non-normative example of a Subject which adds a string-valued `department` property:
 
 <pre class="json example" id="subject-department-example" title="Example Subject with Additional Property">
 {
   "type": "user",
-  "id": "alice@acmecorp.com",
+  "id": "alice@example.com",
   "properties": {
     "department": "Sales"
   }
 }
 </pre>
 
-To increase interoperability, a few common properties are specified below:
+The following is a non-normative example of a subject which adds IP address and device identifier properties:
 
-#### IP Address {#subject-ip-address}
-
-The IP Address of the Subject, identified by an `ip_address` field, whose value is a textual representation of an IP Address, as defined in `Textual Conventions for Internet Network Addresses` [[RFC4001]].
-
-The following is a non-normative example of a subject which adds the `ip_address` property:
-
-<pre class="json example" id="subject-ip-address-example" title="Example Subject with IP Address">
+<pre class="json example" id="subject-device-id-example" title="Example Subject with IP Address and Device ID">
 {
   "type": "user",
-  "id": "alice@acmecorp.com",
+  "id": "alice@example.com",
   "properties": {
-    "department": "Sales",
-    "ip_address": "172.217.22.14"
-  }
-}
-</pre>
-
-#### Device ID {#subject-device-id}
-
-The Device Identifier of the Subject, identified by a `device_id` field, whose value is a string representation of the device identifier.
-
-The following is a non-normative example of a subject which adds the `device_id` property:
-
-<pre class="json example" id="subject-device-id-example" title="Example Subject with Device ID">
-{
-  "type": "user",
-  "id": "alice@acmecorp.com",
-  "properties": {
-    "department": "Sales",
     "ip_address": "172.217.22.14",
     "device_id": "8:65:ee:17:7e:0b"
   }
@@ -85,20 +71,24 @@ The following is a non-normative example of a subject which adds the `device_id`
 
 ## Resource {#resource}
 
-A Resource is the target of an access request. It is a JSON ([[RFC8259]]) object that is constructed similar to a Subject entity. It has the follow keys:
+A Resource is the target of an access request. It is an object that is constructed similar to a Subject entity. It has the following keys:
 
 `type`:
-: REQUIRED. A `string` value that specifies the type of the Resource.
+: REQUIRED. A string value that specifies the type of the Resource. <span class="nlgov-add">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
-: REQUIRED. A `string` value containing the unique identifier of the Resource, scoped to the `type`.
+: REQUIRED. A string value containing the unique identifier of the Resource, scoped to the `type`.
 
 `properties`:
-: OPTIONAL. A JSON object containing any number of key-value pairs, which can be used to express additional properties of a Resource.
+: OPTIONAL. An object which can be used to express additional attributes of a Resource.
 
-<span class="nlgov-add">The Resource MAY contain [[JSON-LD11]] keys starting with the `@`-symbol.</span>
+### Resource Properties {#resource-properties}
 
-### Examples (non-normative)
+Similarly to the Subject properties, the PEP can also provide attributes for the Resource in the properties field.
+
+Such attributes can include, but are not limited to, attributes of the resource used in access evaluations or metadata about the resource.
+
+### Examples (non-normative) {#resource-examples}
 
 The following is a non-normative example of a Resource with a `type` and a simple `id`:
 
@@ -109,7 +99,7 @@ The following is a non-normative example of a Resource with a `type` and a simpl
 }
 </pre>
 
-The following is a non-normative example of a Resource containing a `library_record` property, that is itself a JSON object:
+The following is a non-normative example of a Resource containing a `library_record` property, that is itself an object:
 
 <pre class="json example" id="resource-example-structured" title="Example Resource with Additional Property">
 {
@@ -128,13 +118,45 @@ The following is a non-normative example of a Resource containing a `library_rec
 
 An Action is the type of access that the requester intends to perform.
 
-Action is a JSON ([[RFC8259]]) object that contains a REQUIRED `name` key with a `string` value, and an OPTIONAL `properties` key with a JSON object value. <span class="nlgov-add">The Action MAY contain [[JSON-LD11]] keys starting with the `@`-symbol.</span>
+Action is an object that contains a REQUIRED `name` key with a string value, and an OPTIONAL `properties` key with an object value.
 
 `name`:
-: REQUIRED. The name of the Action.
+: REQUIRED. A string value containing the name of the Action.
 
 `properties`:
-: OPTIONAL. A JSON object containing any number of key-value pairs, which can be used to express additional properties of an Action.
+: OPTIONAL. An object which can be used to express additional attributes of an Action.
+
+### Action Properties {#action-properties}
+
+Similarly to the Subject and Resource properties, the PEP can also provide attributes for the Action in the properties field.
+
+Such attributes can include, but are not limited to, parameters of the action that is being requested.
+
+<span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span>
+
+#### <span class="nlgov-add">Processing Activity identifiers</span>
+
+<span class="nlgov-add">Under Dutch and EU legislation processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</span>
+
+<span class="nlgov-add"><p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+
+<span class="nlgov-add">When included, the reference to the processing activity SHOULD be included using the following key:</span>
+
+<span class="nlgov-add">`processing_activity_id`:
+: REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry. </span>
+
+#### <span class="nlgov-add">Algorithm identifier</span>
+
+<span class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as "Het Algoritmeregister")[https://algoritmes.overheid.nl/] a reference to the relevant algorithm MAY be included.</span>
+
+<span class="nlgov-add"><p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+
+<span class="nlgov-add">When included, the reference to the algorithm SHOULD be included using the following key:</span>
+
+<span class="nlgov-add">`algorithm_id`:
+: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry, such as ("Het Algoritmeregister")[https://algoritmes.overheid.nl/]</span>
+
+### Examples (non-normative) {#action-examples}
 
 The following is a non-normative example of an action:
 
@@ -144,29 +166,29 @@ The following is a non-normative example of an action:
 }
 </pre>
 
-### <span class="nlgov-add">Action Properties</span>
+The following is a non-normative example of an action with additional properties:
 
-<span class="nlgov-add">Actions MAY include zero or more additional attributes as key-value pairs, under the properties object.</span>
-
-<span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span>
-
-#### <span class="nlgov-add">Processing Activity and Algorithm identifiers</span>
-
-<span class="nlgov-add">Under Dutch and EU legislation every action SHOULD include a relation to the processing activity - or algorithm under which it is performed. These identifiers SHOULD be included in the action properties and MUST use the property names as defined in [[[logboek dataverwerkingen]]] standard and its extensions.</span>
+<pre class="json example" id="action-extend-loan-example" title="Example Action with properties for extending a book loan.">
+{
+  "name": "extend-loan",
+  "properties": {
+    "period": "2W"
+  }
+}
+</pre>
 
 ## Context {#context}
 
-The Context object is a set of attributes that represent environmental or contextual data about the request such as time of day. It is a JSON ([[RFC8259]]) object. <span class="nlgov-add">The Context MAY contain [[JSON-LD11]] keys starting with the `@`-symbol.</span>
+The Context represents the environment of the access evaluation request.
 
-<span class="nlgov-add">As described in [[[#security-trust]]] it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability proof of values MAY be provided. If provided, these SHOULD be included in the Context object.</span>
+Context is an object which can be used to express attributes of the environment. 
 
-The following is a non-normative example of a Context:
+Examples of context attributes can include, but are not limited to:
 
-<pre class="json example" id="context-example" title="Example Context">
-{
-  "time": "1985-10-26T01:22-07:00"
-}
-</pre>
+- The time of day,
+- Location from which the request was received,
+- Capabilities of the PEP,
+- JSON Schema or JSON-LD definitions for the request.
 
 ### <span class="nlgov-add">Context Properties</span>
 
@@ -182,4 +204,142 @@ The following is a non-normative example of a Context:
 
 #### <span class="nlgov-add">W3C Trace Context</span>
 
-<span class="nlgov-add">To enable tracing of requests request identifiers MUST be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate`, `traceparent` as defined by [[Trace-Context]].</span>
+<span class="nlgov-add">To enable tracing of requests request identifiers MUST be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate`, `traceparent` as defined by [[trace-context-1]].</span>
+
+<span class="nlgov-add">When included, the W3C Trace Context SHOULD be included in Context object using the following keys:</span>
+
+<span class="nlgov-add">`traceparent`:
+: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[trace-context-1]]</span>
+
+
+
+#### <span class="nlgov-add">Verifiable claims</span>
+
+<span class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[SAML2-CORE]]), Oauth ([[RFC6749]]), and Verifiable Credentials ([[vc-data-model-2.0]]).</span>
+
+<h4 id="context-mim"><span class="nlgov-add">Meta-information Model</span></h4>
+
+<span class="nlgov-add">It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.</span>
+
+<span class="nlgov-add">When included, the meta-information model SHOULD be included in Context object as the following key</span>
+
+<span class="nlgov-add">`mim`:
+: REQUIRED. A string value containing a URL that links to the meta-information model for the request. </span>
+
+<h4 id="context-ld"><span class="nlgov-add">Linked Data context</span></h4>
+
+<span class="nlgov-add">When a transport ([[[#transport]]]) does not use a Linked Data format as its serialization, the Context SHOULD include a URL to a resource, called the "Linked Data context" that allows the information model to be converted to a Linked Data representation. </span>
+
+<span class="nlgov-add"><p class="note">The Linked Data context is *not* the same as the Context object. The Context object describes the context in which an evaluation request takes place. The Linked Data context describes how to convert the *entire* request, containing a Subject, Action, Resource and Context object, to a Linked Data representation.</span></p>
+
+<span class="nlgov-add">When included, the Linked Data context SHOULD be included in Context object as the following key:</span>
+
+<span class="nlgov-add">`ld-context`:
+: REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.</span>
+
+<span class="nlgov-add">When serializing the information model to JSON it is RECOMMENDED to use [[JSON-LD]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.</span>
+
+### Examples (non-normative) {#context-examples}
+
+The following is a non-normative example of a Context:
+
+<pre class="json example" id="context-example" title="Example Context">
+{
+  "time": "1985-10-26T01:22-07:00"
+}
+</pre>
+
+## Decision {#decision}
+
+A Decision is the result of the evaluation of an access request. It provides the information required for the PEP to enforce the decision.
+
+Decision is an object that contains a REQUIRED `decision` key with a `boolean` value, and an OPTIONAL `context` key with an object value.
+
+`decision`:
+: REQUIRED. A boolean value that specifies whether the Decision is to allow or deny the operation.
+
+`context`:
+: OPTIONAL. An object which can convey additional information that can be used by the PEP as part of the decision enforcement process.
+
+In this specification, assuming the evaluation was successful, there are only two possible values for the `decision`:
+
+- `true`: The access request is permitted to go forward. If the PEP does not understand information in the `context` response object, the PEP MAY choose to reject the decision.
+- `false`: The access request is denied and MUST NOT be permitted to go forward.
+
+The following is a non-normative example of a minimal Decision:
+
+<pre class="json example" id="decision-example" title="Example Decision">
+{
+  "decision": true
+}
+</pre>
+
+### Decision Context {#decision-context}
+
+In addition to a `decision`, a response MAY contain a `context` field which contains an object. This context can convey additional information that can be used by the PEP as part of the decision enforcement process.
+
+Examples include, but are not limited to:
+
+- Reason(s) a decision was made,
+- "Advices" and/or "Obligations" tied to the access decision,
+- Hints for rendering UI state,
+- Instructions for step-up authentication,
+- Environmental information,
+- etc.
+
+### Examples (non-normative) {#decision-examples}
+
+The following are all non-normative examples of possible and valid contexts, provided to illustrate possible usages. The actual semantics and format of the `context` object are an implementation concern and outside the scope of this specification. For example, implementations MAY use keys that correspond to concepts from other standards, such as HTTP status codes, to convey common reasons in an interoperable manner.
+
+#### Non-normative Example 1: conveying decision Reasons
+
+The PDP may provide reasons to explain a decision. In the non-normative example below, an implementation might convey different reasons to administrators and end-users, using keys that could correspond to HTTP status codes:
+
+<pre class="json example" id="response-with-reason-context-example" title="Non-normative Example Response with reason Context">
+{
+  "decision": false,
+  "context": {
+    "reason_admin": {
+      "403": "Request failed policy C076E82F"
+    },
+    "reason_user": {
+      "403": "Insufficient privileges. Contact your administrator"
+    }
+  }
+}
+</pre>
+
+#### Non-normative Example 2: conveying metadata and environmental elements
+
+In the following non-normative example, the PDP justifies its decision by including environmental conditions that did not meet its policies. Metadata pertaining to the decision response times is also provided:
+
+<pre class="json example" id="response-with-environment-context-example" title="Non-normative Example Response with Environment and Metadata Context">
+{
+  "decision": false,
+  "context": {
+    "metadata": {
+      "response-time": 60,
+      "response-time-unit": "ms"
+    },
+    "environment": {
+      "ip": "10.10.0.1",
+      "datetime": "2025-06-27T18:03:07Z",
+      "os": "ubuntu24.04.2LTS-AMDx64"
+    }
+  }
+}
+</pre>
+
+#### Non-normative Example 3: requesting step-up authentication
+
+In the following non-normative example, the PDP requests a step-up authentication of the requesting subject, by signalling the required `acr` and `amr` access token claim values it expects to see in order to approve the request:
+
+<pre class="json example" id="response-with-step-up-example" title="Non-normative Example Response with a step-up request Context">
+{
+  "decision": false,
+  "context": {
+    "acr_values": "urn:com:example:loa:3",
+    "amr_values": "mfa hwk"
+  }
+}
+</pre>

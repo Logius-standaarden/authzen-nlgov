@@ -2,9 +2,9 @@
 
 The information model for requests and responses include the following entities: Subject, Action, Resource, Context, and Decision. These are all defined below.
 
-<span class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[MIM]].</span>
+<span class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[?MIM]].</span>
 
-<span class="nlgov-add">It is RECOMMENDED to use [[JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</span>
+<span class="nlgov-add">It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</span>
 
 ## Subject {#subject}
 
@@ -199,23 +199,23 @@ Examples of context attributes can include, but are not limited to:
 
 <span class="nlgov-add">The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].</span>
 
-<span class="nlgov-add">This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).</span>
+<span class="nlgov-add">This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[?ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).</span>
 
 #### <span class="nlgov-add">W3C Trace Context</span>
 
-<span class="nlgov-add">To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[trace-context-1]].</span>
+<span class="nlgov-add">To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].</span>
 
 <span class="nlgov-add">When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:</span>
 
 <span class="nlgov-add">`traceparent`:
-: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[trace-context-1]]</span>
+: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]</span>
 
 <span class="nlgov-add">`tracestate`:
-: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[trace-context-1]]</span>
+: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]</span>
 
 #### <span class="nlgov-add">Verifiable claims</span>
 
-<span class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[SAML2-CORE]]), Oauth ([[RFC6749]]), and Verifiable Credentials ([[vc-data-model-2.0]]).</span>
+<span class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).</span>
 
 <h4 id="context-mim"><span class="nlgov-add">Meta-information Model</span></h4>
 
@@ -237,7 +237,7 @@ Examples of context attributes can include, but are not limited to:
 <span class="nlgov-add">`ld-context`:
 : REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.</span>
 
-<span class="nlgov-add">When serializing the information model to JSON it is RECOMMENDED to use [[JSON-LD]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.</span>
+<span class="nlgov-add">When serializing the information model to JSON it is RECOMMENDED to use [[?JSON-LD11]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.</span>
 
 ### Examples (non-normative) {#context-examples}
 

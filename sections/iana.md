@@ -4,7 +4,7 @@ This specification requests IANA to take four actions: the creation of a new pro
 
 The following registration procedure is used for the registries established by this specification.
 
-Values are registered on a Specification Required [[RFC8126]] basis after a two-week review period on the <openid-specs-authzen@lists.openid.net> mailing list, following review and approval by one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
+Values are registered on a Specification Required [[?RFC8126]] basis after a two-week review period on the <openid-specs-authzen@lists.openid.net> mailing list, following review and approval by one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
 
 Registration requests sent to the mailing list for review should use an appropriate subject (e.g., "Request to register AuthZEN Policy Decision Point Metadata: example").
 
@@ -26,7 +26,7 @@ This specification asks IANA to establish the "AuthZEN Policy Decision Point Met
 
 Registry Name: AuthZEN Policy Decision Point Metadata
 
-Registration Policy: Specification Required per [[RFC8126]]
+Registration Policy: Specification Required per [[?RFC8126]]
 
 Reference: \[This Document\]
 
@@ -152,7 +152,7 @@ Specification Document(s):
 
 ## Well-Known URI Registry {#iana-wk-registry}
 
-This specification asks IANA to register the well-known URI defined in [[[#pdp-metadata-access]]] in the IANA "Well-Known URIs" registry [[IANA.well-known-uris]].
+This specification asks IANA to register the well-known URI defined in [[[#pdp-metadata-access]]] in the IANA "Well-Known URIs" registry [[?IANA.well-known-uris]].
 
 ### Registry Contents {#iana-wk-contents}
 
@@ -180,7 +180,7 @@ This specification asks IANA to establish the "AuthZEN Policy Decision Point Cap
 
 Registry Name: AuthZEN Policy Decision Point Capabilities
 
-Registration Policy: Specification Required per [[RFC8126]]
+Registration Policy: Specification Required per [[?RFC8126]]
 
 Reference: \[This Document\]
 

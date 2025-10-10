@@ -6,4 +6,4 @@ By convention, we refer to a client of the Authorization API as a Policy Enforce
 
 The Authorization API is defined in a transport-agnostic manner. A normative HTTPS binding is described in Transport ([[[#transport]]]). Other bindings, such as gRPC, may be defined in other profiles of this specification.
 
-Authentication for the Authorization API itself is out of scope for this document, since authentication for APIs is well-documented elsewhere. Support for OAuth 2.0 ([[RFC6749]]) is RECOMMENDED.
+Authentication for the Authorization API itself is out of scope for this document, since authentication for APIs is well-documented elsewhere. Support for OAuth 2.0 ([[?RFC6749]]) is RECOMMENDED.

@@ -4,7 +4,7 @@ This specification requests IANA to take four actions: the creation of a new pro
 
 The following registration procedure is used for the registries established by this specification.
 
-Values are registered on a Specification Required [[RFC8126]] basis after a two-week review period on the openid-specs-authzen@lists.openid.net mailing list, following review and approval by one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
+Values are registered on a Specification Required [[RFC8126]] basis after a two-week review period on the <openid-specs-authzen@lists.openid.net> mailing list, following review and approval by one or more Designated Experts. However, to allow for the allocation of values prior to publication of the final version of a specification, the Designated Experts may approve registration once they are satisfied that the specification will be completed and published. However, if the specification is not completed and published in a timely manner, as determined by the Designated Experts, the Designated Experts may request that IANA withdraw the registration.
 
 Registration requests sent to the mailing list for review should use an appropriate subject (e.g., "Request to register AuthZEN Policy Decision Point Metadata: example").
 
@@ -59,8 +59,6 @@ Change Controller:
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
 
-
-
 Metadata Name:
 : `access_evaluation_endpoint`
 
@@ -73,8 +71,6 @@ Change Controller:
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
-
-
 
 Metadata Name:
 : `access_evaluations_endpoint`
@@ -89,8 +85,6 @@ Change Controller:
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
 
-
-
 Metadata Name:
 : `search_subject_endpoint`
 
@@ -103,8 +97,6 @@ Change Controller:
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
-
-
 
 Metadata Name:
 : `search_resource_endpoint`
@@ -119,8 +111,6 @@ Change Controller:
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
 
-
-
 Metadata Name:
 : `search_action_endpoint`
 
@@ -133,8 +123,6 @@ Change Controller:
 
 Specification Document(s):
 : [[[#pdp-metadata-data-endpoint]]] of \[This Document\]
-
-
 
 Metadata Name:
 : `capabilities`
@@ -149,7 +137,6 @@ Change Controller:
 Specification Document(s):
 : [[[#pdp-metadata-data-capabilities]]] of \[This Document\]
 
-
 Metadata Name:
 : `signed_metadata`
 
@@ -162,7 +149,6 @@ Change Controller:
 
 Specification Document(s):
 : [[[#pdp-metadata-data-sig]]] of \[This Document\]
-
 
 ## Well-Known URI Registry {#iana-wk-registry}
 

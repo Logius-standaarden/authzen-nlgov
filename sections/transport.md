@@ -6,7 +6,7 @@ Additional transport bindings (e.g. gRPC or CoAP) MAY be defined in the future i
 
 ## HTTPS JSON Binding {#transport-https-json}
 
-All API requests within this binding are made via an HTTPS `POST` request. 
+All API requests within this binding are made via an HTTPS `POST` request.
 
 Requests MUST include a `Content-Type` header with the value `application/json`, and the request body for each endpoint MUST be a JSON object that conforms to the corresponding request structure, as defined in [[[#table-api-endpoints]]].
 
@@ -59,7 +59,7 @@ The following table provides an overview of the API endpoints defined in this bi
         <td>[[[#action-search-request]]]</td>
         <td>[[[#search-response]]]</td>
     </tr>
-</table>      
+</table>
 
 ### JSON Serialization {#transport-https-json-serialization}
 

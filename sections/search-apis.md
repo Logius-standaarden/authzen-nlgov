@@ -51,10 +51,10 @@ Any Search API Response MAY include a `page` object, but if a response does not 
 
 The `page` object contains the following keys:
 
-`next_token`: 
+`next_token`:
 : REQUIRED. An opaque string value indicating the next page of results to return. If there are no more results after this page, its value MUST be an empty string.
 
-`count`: 
+`count`:
 : OPTIONAL. A non-negative integer indicating the number of results included in this response. When included at the start of a response, as described in the Search API Response ([[[#search-response]]]), this enables a PEP to display a progress indicator when processing large or slow responses.
 
 `total`:
@@ -199,7 +199,7 @@ The Subject Search request is an object consisting of the following entities:
 `page`:
 : OPTIONAL. A page object for paginated requests.
 
-### Example (non-normative)
+### Example (non-normative) {#subject-search-example"}
 
 The following payload defines a request for the subjects of type `user` that can perform the `can_read` action on the resource of type `account` and ID `123`.
 
@@ -261,7 +261,7 @@ The Resource Search request is an object consisting of the following entities:
 `page`:
 : OPTIONAL. A page object for paginated requests.
 
-### Example (non-normative)
+### Example (non-normative) {#resource-search-example"}
 
 The following payload defines a request for the resources of type `account` on which the subject of type `user` and ID `alice@example.com` can perform the `can_read` action.
 
@@ -319,7 +319,7 @@ The Action Search request is an object consisting of the following entities:
 
 <p class="note">Unlike the Subject and Resource Search APIs, the `action` key is omitted from the Action Search request payload.</p>
 
-### Example (non-normative)
+### Example (non-normative) {#action-search-example"}
 
 The following payload defines a request for the actions that the subject of type `user` with ID `123` may perform on the resource of type `account` and ID `123` at 01:22 AM.
 

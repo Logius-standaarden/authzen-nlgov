@@ -50,13 +50,13 @@ The syntax and semantics of .well-known are defined in [[RFC8615]]. The well-kno
 
 An example of a PDP supporting multiple tenants will have a discovery endpoint as follows:
 
-~~~
+~~~ text
 https://pdp.example.com/.well-known/authzen-configuration/tenant1
 ~~~
 
 ### Policy Decision Point Metadata Request {#pdp-metadata-access-request}
 
-A Policy Decision Point metadata document MUST be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is https://pdp.example.com:
+A Policy Decision Point metadata document MUST be queried using an HTTP GET request at the previously specified URL. The consumer of the metadata would make the following request when the resource identifier is `https://pdp.example.com`:
 
 <pre class="http example">
 GET /.well-known/authzen-configuration HTTP/1.1
@@ -65,9 +65,9 @@ Host: pdp.example.com
 
 ### Policy Decision Point Metadata Response {#pdp-metadata-access-response}
 
-The response is a set of metadata parameters about the protected resource's configuration. 
+The response is a set of metadata parameters about the protected resource's configuration.
 
-A successful response MUST use the HTTP status code `200` and a `Content-Type` of `application/json`. Its body MUST be a JSON object that contains a set of metadata parameters as defined in the AuthZEN Policy Decision Point Metadata Registry ([[[#iana-pdp-metadata-registry]]]). 
+A successful response MUST use the HTTP status code `200` and a `Content-Type` of `application/json`. Its body MUST be a JSON object that contains a set of metadata parameters as defined in the AuthZEN Policy Decision Point Metadata Registry ([[[#iana-pdp-metadata-registry]]]).
 
 Any metadata parameters in the response that are not understood by the PEP MUST be ignored.
 

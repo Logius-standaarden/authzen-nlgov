@@ -21,7 +21,6 @@ A Subject is an object that contains two REQUIRED keys, `type` and `id`, which h
 `properties`:
 : OPTIONAL. An object which can be used to express additional attributes of a Subject.
 
-
 ### Subject Properties {#subject-properties}
 
 Many authorization systems are stateless, and expect the PEP to pass in all relevant attributes used in the evaluation of the authorization policy. To satisfy this requirement, Subjects MAY include additional attributes as key-value pairs, under the `properties` object. A property can contain both simple values, such as strings, numbers, booleans and nulls, and complex values, such as arrays and objects.
@@ -147,14 +146,14 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 #### <span class="nlgov-add">Algorithm identifier</span>
 
-<span class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as "Het Algoritmeregister")[https://algoritmes.overheid.nl/] a reference to the relevant algorithm MAY be included.</span>
+<span class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.</span>
 
 <span class="nlgov-add"><p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
 
 <span class="nlgov-add">When included, the reference to the algorithm SHOULD be included using the following key:</span>
 
 <span class="nlgov-add">`algorithm_id`:
-: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry, such as ("Het Algoritmeregister")[https://algoritmes.overheid.nl/]</span>
+: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.</span>
 
 ### Examples (non-normative) {#action-examples}
 
@@ -181,7 +180,7 @@ The following is a non-normative example of an action with additional properties
 
 The Context represents the environment of the access evaluation request.
 
-Context is an object which can be used to express attributes of the environment. 
+Context is an object which can be used to express attributes of the environment.
 
 Examples of context attributes can include, but are not limited to:
 
@@ -210,8 +209,6 @@ Examples of context attributes can include, but are not limited to:
 
 <span class="nlgov-add">`traceparent`:
 : REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[trace-context-1]]</span>
-
-
 
 #### <span class="nlgov-add">Verifiable claims</span>
 

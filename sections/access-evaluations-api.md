@@ -203,9 +203,9 @@ This specification supports three evaluation semantics:
 
 To select the desired evaluation semantic, a PEP can pass in `options.evaluations_semantic` with exactly one of the following values:
 
-  * `execute_all`
-  * `deny_on_first_deny`
-  * `permit_on_first_permit`
+* `execute_all`
+* `deny_on_first_deny`
+* `permit_on_first_permit`
 
 `execute_all` is the default semantic, so an `evaluations` request without the `options.evaluations_semantic` flag will execute using this semantic.
 
@@ -404,6 +404,7 @@ The following is a non-normative example of a Access Evaluations Response to an 
 ### Errors
 
 There are two types of errors, and they are handled differently:
+
 1. Transport-level errors, or errors that pertain to the entire payload.
 2. Errors in individual evaluations.
 

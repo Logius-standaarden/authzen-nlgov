@@ -1,22 +1,29 @@
 # Terminology
 
-Subject:
-: The user or machine principal for whom an authorization decision is being requested.
+<dfn data-lt="Subject">Subject</dfn>
 
-Resource:
-: The target of the request; the resource about which the Authorization API is being made.
+The user or machine principal for whom an authorization decision is being requested.
 
-Action:
-: The operation the Subject has attempted on the Resource in an Authorization API call.
+<dfn data-lt="Resource">Resource</dfn>
 
-Context:
-: The environmental or contextual attributes for this request.
+The target of the request; the resource about which the Authorization API is being made.
 
-Decision:
-: The value of the evaluation decision made by the PDP: `true` for "allow", `false` for "deny".
+<dfn data-lt="Action">Action</dfn>
 
-PDP:
-: Policy Decision Point. The component or system that provides authorization decisions over the network interface defined here as the Authorization API.
+The operation the {{Subject}} has attempted on the {{Resource}} in an Authorization API call.
 
-PEP:
-: Policy Enforcement Point. The component or system that requests decisions from the PDP and enforces access to specific requests based on the decisions obtained from the PDP.
+<dfn data-lt="Context">Context</dfn>
+
+The environmental or contextual attributes for this request.
+
+<dfn data-lt="Decision">Decision</dfn>
+
+The value of the evaluation decision made by the PDP: `true` for "allow", `false` for "deny".
+
+<dfn data-lt="PDP">PDP</dfn>
+
+Policy Decision Point. The component or system that provides authorization decisions over the network interface defined here as the Authorization API.
+
+<dfn data-lt="PEP">PEP</dfn>
+
+Policy Enforcement Point. The component or system that requests decisions from the PDP and enforces access to specific requests based on the decisions obtained from the PDP.

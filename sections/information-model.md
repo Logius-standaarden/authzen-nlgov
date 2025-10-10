@@ -133,27 +133,27 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 <span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span>
 
-#### <span class="nlgov-add">Processing Activity identifiers</span>
+#### <span class="nlgov-add">Processing Activity identifier</span>
 
-<span class="nlgov-add">Under Dutch and EU legislation processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</span>
-
-<span class="nlgov-add"><p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+<span class="nlgov-add">Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</span>
 
 <span class="nlgov-add">When included, the reference to the processing activity SHOULD be included using the following key:</span>
 
 <span class="nlgov-add">`processing_activity_id`:
 : REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry. </span>
 
+<span class="nlgov-add"><p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+
 #### <span class="nlgov-add">Algorithm identifier</span>
 
 <span class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.</span>
-
-<span class="nlgov-add"><p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
 
 <span class="nlgov-add">When included, the reference to the algorithm SHOULD be included using the following key:</span>
 
 <span class="nlgov-add">`algorithm_id`:
 : REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.</span>
+
+<span class="nlgov-add"><p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
 
 ### Examples (non-normative) {#action-examples}
 
@@ -203,12 +203,15 @@ Examples of context attributes can include, but are not limited to:
 
 #### <span class="nlgov-add">W3C Trace Context</span>
 
-<span class="nlgov-add">To enable tracing of requests request identifiers MUST be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate`, `traceparent` as defined by [[trace-context-1]].</span>
+<span class="nlgov-add">To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[trace-context-1]].</span>
 
-<span class="nlgov-add">When included, the W3C Trace Context SHOULD be included in Context object using the following keys:</span>
+<span class="nlgov-add">When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:</span>
 
 <span class="nlgov-add">`traceparent`:
 : REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[trace-context-1]]</span>
+
+<span class="nlgov-add">`tracestate`:
+: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[trace-context-1]]</span>
 
 #### <span class="nlgov-add">Verifiable claims</span>
 

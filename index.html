@@ -9,10 +9,35 @@
   </title>
   <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon"/>
   <script class="remove" type="module" src="js/config.mjs"></script>
+  <style>
+    .nlgov-add {
+      background-color: lightgreen;
+    }
+    .nlgov-del {
+      background-color: lightcoral;
+      text-decoration: line-through;
+    }
+  </style> 
  </head>
  <body>
+
   <section id="abstract" data-include="sections/abstract.md" data-include-format="markdown" ></section>
+  <div>
+   <i>
+    This document is an adaptation of the
+    <a href="https://openid.net/specs/authorization-api-1_0-04.html">
+     'OpenID AuthZEN Authorization API 1.0 – draft 04’ (hereinafter: AuthZEN)
+    </a>
+    of the OpenID Foundation.
+      This does not indicate an endorsement by the OpenID Foundation. In as far as AuthZEN is incorporated in this document, the
+    <a href="https://openid.net/intellectual-property/contribution-license-agreement/">
+     OpenID Copyright License
+    </a>
+    applies.
+   </i>
+  </div>
   <section id="sotd"></section><!-- Wordt automatisch gevuld -->
+  <section data-include="sections/nlgov-profile.md" data-include-format="markdown" class="introductory"></section>
   <section data-include="sections/introduction.md" data-include-format="markdown"></section>
   <section data-include="sections/model.md" data-include-format="markdown"></section>
   <section data-include="sections/features.md" data-include-format="markdown"></section>
@@ -20,13 +45,13 @@
   <section data-include="sections/information-model.md" data-include-format="markdown"></section>
   <section data-include="sections/access-evaluation-api.md" data-include-format="markdown"></section>
   <section data-include="sections/access-evaluations-api.md" data-include-format="markdown"></section>
-  <section data-include="sections/subject-search-api.md" data-include-format="markdown"></section>
-  <section data-include="sections/resource-search-api.md" data-include-format="markdown"></section>
-  <section data-include="sections/action-search-api.md" data-include-format="markdown"></section>
+  <section data-include="sections/search-apis.md" data-include-format="markdown"></section>
   <section data-include="sections/pdp-metadata.md" data-include-format="markdown"></section>
   <section data-include="sections/transport.md" data-include-format="markdown"></section>
   <section data-include="sections/security.md" data-include-format="markdown"></section>
   <section data-include="sections/iana.md" data-include-format="markdown"></section>
+  <section data-include="sections/terminology.md" data-include-format="markdown" class="appendix"></section>
+  <section data-include="sections/acknowledgements.md" data-include-format="markdown" class="appendix"></section>
   <section id='conformance'></section>
   <section id='tof'></section>
   <section id="index"></section>

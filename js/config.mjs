@@ -13,21 +13,32 @@ loadRespecWithConfiguration({
   editors:
     [
       {
-        name: "Project Federatieve Toegangsverlening",
-        company: "MinBZK",
-        companyURL: "https://vng-realisatie.github.io/ftv",
+        name: "Stas Mironov",
+        company: "Logius",
+        companyURL: "https://www.logius.nl/"
+      },
+      {
+        name: "Alexander Green",
+        company: "Logius",
+        companyURL: "https://www.logius.nl/"
       }
     ],
   authors:
     [
       {
-        name: "Project Federatieve Toegangsverlening",
-        company: "MinBZK",
-        companyURL: "https://vng-realisatie.github.io/ftv",
+        name: "Michiel Trimpe",
+        company: "VNG Realisatie",
+        companyURL: "https://vng.nl/artikelen/vng-realisatie"
       }
     ],
   github: "https://github.com/Logius-standaarden/authzen-nlgov",
   localBiblio: {
+        "NIST.SP.800-162": {
+            href: " https://doi.org/10.6028/NIST.SP.800-162 ",
+            title: " Guide to Attribute Based Access Control (ABAC) Definition and Considerations ",
+            authors: ["Vincent C. Hu","David Ferraiolo","Rick Kuhn","Adam Schnitzer","Kenneth Sandlin","Robert Miller","Karen Scarfone"],
+            date: " January 2014 "
+        }, 
         "IANA.well-known-uris": {
             href: "https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml",
             title: "IANA \"Well-Known URIs\" registry",

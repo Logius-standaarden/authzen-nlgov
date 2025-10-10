@@ -16,6 +16,11 @@ loadRespecWithConfiguration({
         name: "Stas Mironov",
         company: "Logius",
         companyURL: "https://www.logius.nl/"
+      },
+      {
+        name: "Alexander Green",
+        company: "Logius",
+        companyURL: "https://www.logius.nl/"
       }
     ],
   authors:

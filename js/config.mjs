@@ -8,7 +8,7 @@ loadRespecWithConfiguration({
   publishDate: "2025-07-01",
   publishVersion: "1.0.0",
   // TODO: verwijder voor publicatie
-  latestVersion: "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+  latestVersion: "https://logius-standaarden.github.io/authzen-nlgov/",
   prevVersion: [],
   editors:
     [

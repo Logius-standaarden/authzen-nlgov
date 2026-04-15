@@ -1,4 +1,4 @@
-# NLGov Profile for OpenID AuthZEN Authorization API
+# NLgov Profile for OpenID AuthZEN Authorization API
 
 Deze repository bevat de specificatie van het Nederlands overheidsprofiel op AuthZEN. 
 

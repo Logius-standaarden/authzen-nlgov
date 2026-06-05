@@ -1,10 +1,10 @@
-# Information Model {#information-model}
+# Information Model <ins class="nlgov-changed" aria-label="NLgov additions in this section">▲</ins> {#information-model}
+
 
 The information model for requests and responses include the following entities: Subject, Action, Resource, Context, and Decision. These are all defined below.
 
-<span class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[?MIM]].</span>
-
-<span class="nlgov-add">It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</span>
+<ins class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambiguous interpretation of the meaning of requests. It is RECOMMENDED to document the meta-information model using [[?MIM]].</ins>
+<ins class="nlgov-add">It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</ins>
 
 ## Subject {#subject}
 

@@ -8,81 +8,13 @@
   <title>
     NLgov Profile for OpenID AuthZEN Authorization API
   </title>
+  <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/profile-style.css" rel="stylesheet"
+    type="text/css" />
+  <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/nlgov/profile-dark.css" rel="stylesheet"
+    type="text/css" media="(prefers-color-scheme: dark)">
   <link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon"
     type="image/x-icon" />
   <script class="remove" type="module" src="js/config.mjs"></script>
-  <style>
-    :root {
-      /* Additions – green palette */
-      --nlgov-add-bg: #d4edda;
-      --nlgov-add-color: #155724;
-      --nlgov-add-border: #28a745;
-      --nlgov-add-marker: #2e9e48;
-
-      /* Deletions – red palette */
-      --nlgov-del-bg: #f8d7da;
-      --nlgov-del-color: #721c24;
-      --nlgov-del-border: #dc3545;
-    }
-
-    /* ---------- Shared base styles ---------- */
-
-    .nlgov-add {
-      background-color: var(--nlgov-add-bg);
-      color: var(--nlgov-add-color);
-    }
-
-    .nlgov-del {
-      background-color: var(--nlgov-del-bg);
-      color: var(--nlgov-del-color);
-      text-decoration: line-through;
-    }
-
-    /* ---------- Block-level (paragraphs, divs, list items) ---------- */
-
-    p.nlgov-add,
-    div.nlgov-add,
-    li.nlgov-add,
-    blockquote.nlgov-add {
-      border-left: 3px solid var(--nlgov-add-border);
-      padding: 0.5em 0.75em;
-      margin-block: 0.5em;
-    }
-
-    p.nlgov-del,
-    div.nlgov-del,
-    li.nlgov-del,
-    blockquote.nlgov-del {
-      border-left: 3px solid var(--nlgov-del-border);
-      padding: 0.5em 0.75em;
-      margin-block: 0.5em;
-    }
-
-    /* ---------- Inline additions (<ins>) ---------- */
-
-    ins.nlgov-add {
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-decoration-color: var(--nlgov-add-border);
-      padding: 0 0.15em;
-    }
-
-    /* ---------- Inline deletions (<del>) ---------- */
-
-    del.nlgov-del {
-      padding: 0 0.15em;
-    }
-
-    /* ---------- Section-changed marker (▲ in headings / ToC) ---------- */
-
-    .nlgov-changed-marker {
-      color: var(--nlgov-add-marker);
-      font-size: 0.7em;
-      vertical-align: super;
-      margin-left: 0.3em;
-      font-style: normal;
-    }
-  </style>
 </head>
 
 <body>

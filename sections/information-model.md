@@ -137,12 +137,12 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 <p class="nlgov-add">Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</p>
 
-<p class="nlgov-add">When included, the reference to the processing activity SHOULD be included using the following key:</p>
 
 <div class="nlgov-add">
+When included, the reference to the processing activity SHOULD be included using the following key:
 
-`processing_activity_id`:
-: REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry.
+<p class="nlgov-add">`processing_activity_id`:
+: REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry.</p>
 
 </div>
 
@@ -152,12 +152,11 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 <p class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.</p>
 
-<p class="nlgov-add">When included, the reference to the algorithm SHOULD be included using the following key:</p>
-
 <div class="nlgov-add">
+When included, the reference to the algorithm SHOULD be included using the following key:
 
-`algorithm_id`:
-: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.
+<p class="nlgov-add">`algorithm_id`:
+: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.</p>
 
 </div>
 
@@ -213,32 +212,30 @@ Examples of context attributes can include, but are not limited to:
 
 <p class="nlgov-add">To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].</p>
 
-<p class="nlgov-add">When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:</p>
-
 <div class="nlgov-add">
+When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:
 
-`traceparent`:
-: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]
+<p class="nlgov-add">`traceparent`:
+: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]</p>
 
-`tracestate`:
-: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]
+<p class="nlgov-add">`tracestate`:
+: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]</p>
 
 </div>
 
 #### Verifiable claims <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
-<p class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).</p>
+<p class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), OAuth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).</p>
 
 <h4 id="context-mim">Meta-information Model <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span></h4>
 
 <p class="nlgov-add">It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.</p>
 
-<p class="nlgov-add">When included, the meta-information model SHOULD be included in Context object as the following key</p>
-
 <div class="nlgov-add">
+When included, the meta-information model SHOULD be included in Context object as the following key
 
-`mim`:
-: REQUIRED. A string value containing a URL that links to the meta-information model for the request.
+<p class="nlgov-add">`mim`:
+: REQUIRED. A string value containing a URL that links to the meta-information model for the request.</p>
 
 </div>
 
@@ -248,12 +245,11 @@ Examples of context attributes can include, but are not limited to:
 
 <p class="note nlgov-add">The Linked Data context is *not* the same as the Context object. The Context object describes the context in which an evaluation request takes place. The Linked Data context describes how to convert the *entire* request, containing a Subject, Action, Resource and Context object, to a Linked Data representation.</p>
 
-<p class="nlgov-add">When included, the Linked Data context SHOULD be included in Context object as the following key:</p>
-
 <div class="nlgov-add">
+When included, the Linked Data context SHOULD be included in Context object as the following key:
 
-`ld-context`:
-: REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.
+<p class="nlgov-add">`ld-context`:
+: REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.</p>
 
 </div>
 

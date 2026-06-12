@@ -137,7 +137,6 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 <p class="nlgov-add">Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</p>
 
-
 <div class="nlgov-add">
 When included, the reference to the processing activity SHOULD be included using the following key:
 

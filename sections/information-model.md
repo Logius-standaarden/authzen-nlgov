@@ -195,7 +195,7 @@ Examples of context attributes can include, but are not limited to:
 - Capabilities of the PEP,
 - JSON Schema or JSON-LD definitions for the request.
 
-### Context Properties <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+### <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">Context Properties ▲</span>
 
 <p class="nlgov-add">Context MAY include zero or more additional attributes as key-value pairs.</p>
 

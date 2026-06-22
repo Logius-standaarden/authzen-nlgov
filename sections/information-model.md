@@ -3,10 +3,11 @@
 The information model for requests and responses include the following entities: Subject, Action, Resource, Context, and Decision. These are all defined below.
 
 <div class="nlgov-add-section">
+
 Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[?MIM]].
- 
+
 It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].
- 
+
 </div>
 
 ## Subject {#subject}
@@ -140,29 +141,30 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 #### Processing Activity identifier <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
-<Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.
- 
+Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.
+
 When included, the reference to the processing activity SHOULD be included using the following key:
- 
+
 `processing_activity_id`:
 : REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry.
- 
-<p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p>
-</section>
 
+<p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p>
+
+</section>
 
 <section class="nlgov-add">
 
 #### Algorithm identifier <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
 When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.
- 
+
 When included, the reference to the algorithm SHOULD be included using the following key:
- 
+
 `algorithm_id`:
 : REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.
- 
+
 <p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p>
+
 </section>
 
 ### Examples (non-normative) {#action-examples}
@@ -199,57 +201,58 @@ Examples of context attributes can include, but are not limited to:
 - Capabilities of the PEP,
 - JSON Schema or JSON-LD definitions for the request.
 
-
 <section class="nlgov-add">
 
-### <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">Context Properties ▲</span>
+### Context Properties <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
 Context MAY include zero or more additional attributes as key-value pairs.
- 
+
 To increase interoperability, a few common properties are specified below:
 
 #### Time <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
 The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].
- 
+
 This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[?ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).
 
 #### W3C Trace Context <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
 To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].
- 
+
 When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:
- 
+
 `traceparent`:
 : REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]
- 
+
 `tracestate`:
 : REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]
+
 #### Verifiable claims <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
 
 As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).
- 
+
 <h4 id="context-mim">Meta-information Model <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span></h4>
- 
+
 It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.
- 
+
 When included, the meta-information model SHOULD be included in Context object as the following key
- 
+
 `mim`:
 : REQUIRED. A string value containing a URL that links to the meta-information model for the request.
- 
+
 <h4 id="context-ld">Linked Data context <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span></h4>
- 
+
 When a transport ([[[#transport]]]) does not use a Linked Data format as its serialization, the Context SHOULD include a URL to a resource, called the "Linked Data context" that allows the information model to be converted to a Linked Data representation.
- 
+
 <p class="note">The Linked Data context is *not* the same as the Context object. The Context object describes the context in which an evaluation request takes place. The Linked Data context describes how to convert the *entire* request, containing a Subject, Action, Resource and Context object, to a Linked Data representation.</p>
+
 When included, the Linked Data context SHOULD be included in Context object as the following key:
- 
+
 `ld-context`:
 : REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.
- 
+
 When serializing the information model to JSON it is RECOMMENDED to use [[?JSON-LD11]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.
- 
+
 </section>
 
 ### Examples (non-normative) {#context-examples}

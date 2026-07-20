@@ -1,0 +1,17 @@
+/* ==========================================================================
+   NLgov Profile – Additions & Deletions
+   Dark-mode overrides (loaded with media="(prefers-color-scheme: dark)")
+   ========================================================================== */
+
+:root {
+  /* Additions – dark green palette */
+  --nlgov-add-bg: #001a05;
+  --nlgov-add-color: inherit;
+  --nlgov-add-border: #2ea043;
+  --nlgov-add-marker: #6fdc8c;
+
+  /* Deletions – dark red palette */
+  --nlgov-del-bg: #3a1418;
+  --nlgov-del-color: #f1b0b7;
+  --nlgov-del-border: #f85149;
+}

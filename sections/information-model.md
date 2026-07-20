@@ -137,9 +137,9 @@ Such attributes can include, but are not limited to, parameters of the action th
 
 <ins class="nlgov-add">To increase interoperability, a few common properties are specified below:</ins>
 
-<section class="nlgov-add">
+<section class="nlgov-add" aria-label="section toegevoegd in NLgov">
 
-#### Processing Activity identifier <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+#### Processing Activity identifier
 
 Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.
 
@@ -154,7 +154,7 @@ When included, the reference to the processing activity SHOULD be included using
 
 <section class="nlgov-add">
 
-#### Algorithm identifier <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+#### Algorithm identifier
 
 When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.
 
@@ -203,19 +203,19 @@ Examples of context attributes can include, but are not limited to:
 
 <section class="nlgov-add">
 
-### Context Properties <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+### Context Properties
 
 Context MAY include zero or more additional attributes as key-value pairs.
 
 To increase interoperability, a few common properties are specified below:
 
-#### Time <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+#### Time
 
 The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].
 
 This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[?ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).
 
-#### W3C Trace Context <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+#### W3C Trace Context
 
 To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].
 
@@ -227,11 +227,11 @@ When included, the W3C Trace Context SHOULD be included in the Context object us
 `tracestate`:
 : REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]
 
-#### Verifiable claims <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span>
+#### Verifiable claims
 
 As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).
 
-<h4 id="context-mim">Meta-information Model <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span></h4>
+<h4 id="context-mim">Meta-information Model</h4>
 
 It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.
 
@@ -240,7 +240,7 @@ When included, the meta-information model SHOULD be included in Context object a
 `mim`:
 : REQUIRED. A string value containing a URL that links to the meta-information model for the request.
 
-<h4 id="context-ld">Linked Data context <span class="nlgov-changed-marker" aria-label="section toegevoegd in NLgov">▲</span></h4>
+<h4 id="context-ld">Linked Data context</h4>
 
 When a transport ([[[#transport]]]) does not use a Linked Data format as its serialization, the Context SHOULD include a URL to a resource, called the "Linked Data context" that allows the information model to be converted to a Linked Data representation.
 

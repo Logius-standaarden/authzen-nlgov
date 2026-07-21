@@ -1,14 +1,12 @@
 import { loadRespecWithConfiguration } from "https://logius-standaarden.github.io/publicatie/respec/organisation-config.mjs";
 
 loadRespecWithConfiguration({
-  specStatus: "WV",
+  specStatus: "DEF",
   specType: "ST",
   pubDomain: "api",
   shortName: "authzen",
-  publishDate: "2025-07-01",
+  publishDate: "2026-06-25",
   publishVersion: "1.0.0",
-  // TODO: verwijder voor publicatie
-  latestVersion: "https://logius-standaarden.github.io/authzen-nlgov/",
   prevVersion: [],
   editors:
     [

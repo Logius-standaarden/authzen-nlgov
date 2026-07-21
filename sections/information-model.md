@@ -2,9 +2,13 @@
 
 The information model for requests and responses include the following entities: Subject, Action, Resource, Context, and Decision. These are all defined below.
 
-<span class="nlgov-add">Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[?MIM]].</span>
+<div class="nlgov-add-section">
 
-<span class="nlgov-add">It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].</span>
+Specific implementations of the generic AuthZEN information model SHOULD be documented in a meta-information model. This enables an unambigous interpretation of the meaning of requests. It is RECOMMENDED to document to the meta-information model using [[?MIM]].
+
+It is RECOMMENDED to use [[?JSON-LD11]] to enable automatic integration into existing semantic models, as described in [[[#context-mim]]].
+
+</div>
 
 ## Subject {#subject}
 
@@ -13,7 +17,7 @@ A Subject is the user or machine principal about whom the Authorization API is b
 A Subject is an object that contains two REQUIRED keys, `type` and `id`, which have a string value, and an OPTIONAL key, `properties`, with a value of an object.
 
 `type`:
-: REQUIRED. A string value that specifies the type of the Subject. <span class="nlgov-add">It is RECOMMENDED to define the type as a Linked Data URI.</span>
+: REQUIRED. A string value that specifies the type of the Subject. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
 : REQUIRED. A string value containing the unique identifier of the Subject, scoped to the `type`.
@@ -73,7 +77,7 @@ The following is a non-normative example of a subject which adds IP address and 
 A Resource is the target of an access request. It is an object that is constructed similar to a Subject entity. It has the following keys:
 
 `type`:
-: REQUIRED. A string value that specifies the type of the Resource. <span class="nlgov-add">It is RECOMMENDED to define the type as a Linked Data URI.</span>
+: REQUIRED. A string value that specifies the type of the Resource. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
 : REQUIRED. A string value containing the unique identifier of the Resource, scoped to the `type`.
@@ -131,29 +135,33 @@ Similarly to the Subject and Resource properties, the PEP can also provide attri
 
 Such attributes can include, but are not limited to, parameters of the action that is being requested.
 
-<span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span>
+<span class="nlgov-add" aria-label="section toegevoegd in NLgov">To increase interoperability, a few common properties are specified below:</span>
 
-#### <span class="nlgov-add">Processing Activity identifier</span>
+<section class="nlgov-add" aria-label="section toegevoegd in NLgov">
 
-<span class="nlgov-add">Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.</span>
+#### Processing Activity identifier
 
-<span class="nlgov-add">When included, the reference to the processing activity SHOULD be included using the following key:</span>
+Under Dutch and EU legislation, processing of personal data should be described in a Record of Processing Activities. In certain cases, e.g. when a single system processes data for multiple different processing activities, a relation to the processing activity MAY be included.
 
-<span class="nlgov-add">`processing_activity_id`:
-: REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry. </span>
+When included, the reference to the processing activity SHOULD be included using the following key:
 
-<span class="nlgov-add"><p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+`processing_activity_id`:
+: REQUIRED. A string value containing the URI of the processing activity within a Processing Activity registry.
 
-#### <span class="nlgov-add">Algorithm identifier</span>
+<p class="note">The processing activity identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p>
 
-<span class="nlgov-add">When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.</span>
+#### Algorithm identifier
 
-<span class="nlgov-add">When included, the reference to the algorithm SHOULD be included using the following key:</span>
+When data is processed as part of an algorithm in a public registry, such as ["Het Algoritmeregister"](https://algoritmes.overheid.nl/), a reference to the relevant algorithm MAY be included.
 
-<span class="nlgov-add">`algorithm_id`:
-: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.</span>
+When included, the reference to the algorithm SHOULD be included using the following key:
 
-<span class="nlgov-add"><p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p></span>
+`algorithm_id`:
+: REQUIRED. A string value containing the URI of the algorithm in an algorithm registry.
+
+<p class="note">The algorithm identifier should only be used within the context of an organization and SHOULD NOT cross organizational boundaries.</p>
+
+</section>
 
 ### Examples (non-normative) {#action-examples}
 
@@ -189,55 +197,59 @@ Examples of context attributes can include, but are not limited to:
 - Capabilities of the PEP,
 - JSON Schema or JSON-LD definitions for the request.
 
-### <span class="nlgov-add">Context Properties</span>
+<section class="nlgov-add" aria-label="section toegevoegd in NLgov">
 
-<span class="nlgov-add">Context MAY include zero or more additional attributes as key-value pairs.</span>
+### Context Properties
 
-<span class="nlgov-add">To increase interoperability, a few common properties are specified below:</span>
+Context MAY include zero or more additional attributes as key-value pairs.
 
-#### <span class="nlgov-add">Time</span>
+To increase interoperability, a few common properties are specified below:
 
-<span class="nlgov-add">The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].</span>
+#### Time
 
-<span class="nlgov-add">This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[?ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).</span>
+The logical time at which the action was considered to be initiated, identified by the `time` field, whose value is a textual representation of the time as defined in [[RFC3339]].
 
-#### <span class="nlgov-add">W3C Trace Context</span>
+This timestamp SHOULD be used when a PDP evaluates the access request uses information from data sources that support temporal queries. See for example the [[[?ADR]]] and its [temporal extension](https://docs.geostandaarden.nl/api/API-Strategie-ext/#temporal).
 
-<span class="nlgov-add">To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].</span>
+#### W3C Trace Context
 
-<span class="nlgov-add">When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:</span>
+To enable tracing of requests, request identifiers SHOULD be included in the evaluation request. Request identifiers SHOULD be included in the Context object. They SHOULD be in the form of `tracestate` and `traceparent` values as defined by [[?trace-context-1]].
 
-<span class="nlgov-add">`traceparent`:
-: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]</span>
+When included, the W3C Trace Context SHOULD be included in the Context object using the following keys:
 
-<span class="nlgov-add">`tracestate`:
-: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]</span>
+`traceparent`:
+: REQUIRED. An string value containing a value as defined in Section 3.2.2 of [[?trace-context-1]]
 
-#### <span class="nlgov-add">Verifiable claims</span>
+`tracestate`:
+: REQUIRED. An string value containing a value as defined in Section 3.3.1.1 of [[?trace-context-1]]
 
-<span class="nlgov-add">As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).</span>
+#### Verifiable claims
 
-<h4 id="context-mim"><span class="nlgov-add">Meta-information Model</span></h4>
+As described in [[[#security-trust]]], it is recommended to consider values in the information model as trusted and valid. For purposes of defense-in-depth and traceability, verifiable claims for values in the information model MAY be provided. The verifiable claims MAY use standards such as, but not limited to, SAML ([[?SAML2-CORE]]), Oauth ([[?RFC6749]]), and Verifiable Credentials ([[?vc-data-model-2.0]]).
 
-<span class="nlgov-add">It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.</span>
+<h4 id="context-mim">Meta-information Model</h4>
 
-<span class="nlgov-add">When included, the meta-information model SHOULD be included in Context object as the following key</span>
+It is RECOMMENDED to make the information model self-describing by including a URL to the meta-information model [[[#information-model]]] in the context.
 
-<span class="nlgov-add">`mim`:
-: REQUIRED. A string value containing a URL that links to the meta-information model for the request. </span>
+When included, the meta-information model SHOULD be included in Context object as the following key
 
-<h4 id="context-ld"><span class="nlgov-add">Linked Data context</span></h4>
+`mim`:
+: REQUIRED. A string value containing a URL that links to the meta-information model for the request.
 
-<span class="nlgov-add">When a transport ([[[#transport]]]) does not use a Linked Data format as its serialization, the Context SHOULD include a URL to a resource, called the "Linked Data context" that allows the information model to be converted to a Linked Data representation. </span>
+<h4 id="context-ld">Linked Data context</h4>
 
-<span class="nlgov-add"><p class="note">The Linked Data context is *not* the same as the Context object. The Context object describes the context in which an evaluation request takes place. The Linked Data context describes how to convert the *entire* request, containing a Subject, Action, Resource and Context object, to a Linked Data representation.</span></p>
+When a transport ([[[#transport]]]) does not use a Linked Data format as its serialization, the Context SHOULD include a URL to a resource, called the "Linked Data context" that allows the information model to be converted to a Linked Data representation.
 
-<span class="nlgov-add">When included, the Linked Data context SHOULD be included in Context object as the following key:</span>
+<p class="note">The Linked Data context is *not* the same as the Context object. The Context object describes the context in which an evaluation request takes place. The Linked Data context describes how to convert the *entire* request, containing a Subject, Action, Resource and Context object, to a Linked Data representation.</p>
 
-<span class="nlgov-add">`ld-context`:
-: REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.</span>
+When included, the Linked Data context SHOULD be included in Context object as the following key:
 
-<span class="nlgov-add">When serializing the information model to JSON it is RECOMMENDED to use [[?JSON-LD11]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.</span>
+`ld-context`:
+: REQUIRED. An object that provides context for mapping the serialized information model to Linked Data, or a string value containing a URL from which the mapping can be retrieved.
+
+When serializing the information model to JSON it is RECOMMENDED to use [[?JSON-LD11]] to provide the Linked Data context. In that case, the value of the `ld-context` key should be considered as the value of the `@context` key at top-level.
+
+</section>
 
 ### Examples (non-normative) {#context-examples}
 

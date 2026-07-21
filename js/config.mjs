@@ -5,7 +5,7 @@ loadRespecWithConfiguration({
   specType: "ST",
   pubDomain: "api",
   shortName: "authzen",
-  publishDate: "2026-07-21",
+  publishDate: "2026-06-25",
   publishVersion: "1.0.0",
   prevVersion: [],
   editors:

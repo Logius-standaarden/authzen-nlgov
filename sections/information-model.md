@@ -17,7 +17,7 @@ A Subject is the user or machine principal about whom the Authorization API is b
 A Subject is an object that contains two REQUIRED keys, `type` and `id`, which have a string value, and an OPTIONAL key, `properties`, with a value of an object.
 
 `type`:
-: REQUIRED. A string value that specifies the type of the Subject. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span> 
+: REQUIRED. A string value that specifies the type of the Subject. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
 : REQUIRED. A string value containing the unique identifier of the Subject, scoped to the `type`.
@@ -77,7 +77,7 @@ The following is a non-normative example of a subject which adds IP address and 
 A Resource is the target of an access request. It is an object that is constructed similar to a Subject entity. It has the following keys:
 
 `type`:
-: REQUIRED. A string value that specifies the type of the Resource. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span> 
+: REQUIRED. A string value that specifies the type of the Resource. <span class="nlgov-add" aria-label="section toegevoegd in NLgov">It is RECOMMENDED to define the type as a Linked Data URI.</span>
 
 `id`:
 : REQUIRED. A string value containing the unique identifier of the Resource, scoped to the `type`.
@@ -135,7 +135,7 @@ Similarly to the Subject and Resource properties, the PEP can also provide attri
 
 Such attributes can include, but are not limited to, parameters of the action that is being requested.
 
-<span class="nlgov-add" aria-label="section toegevoegd in NLgov">To increase interoperability, a few common properties are specified below:</span> 
+<span class="nlgov-add" aria-label="section toegevoegd in NLgov">To increase interoperability, a few common properties are specified below:</span>
 
 <section class="nlgov-add" aria-label="section toegevoegd in NLgov">
 

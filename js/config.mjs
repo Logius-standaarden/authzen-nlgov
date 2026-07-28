@@ -3,7 +3,7 @@ import { loadRespecWithConfiguration } from "https://logius-standaarden.github.i
 loadRespecWithConfiguration({
   specStatus: "DEF",
   specType: "ST",
-  pubDomain: "api",
+  pubDomain: "ftv",
   shortName: "authzen",
   publishDate: "2026-06-25",
   publishVersion: "1.0.0",

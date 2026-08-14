@@ -96,3 +96,8 @@ flowchart LR
 </details>
 
 ---
+
+## Licentie
+
+De specificatie staat onder [Creative Commons Naamsvermelding 4.0 Internationaal](LICENSE) (CC-BY-4.0). Dit document is een bewerking van de [OpenID AuthZEN Authorization API 1.0 draft 04](https://openid.net/specs/authorization-api-1_0-04.html) van de OpenID Foundation; voor zover die specificatie hierin is opgenomen geldt de [OpenID Copyright License](https://openid.net/intellectual-property/contribution-license-agreement/). Opname impliceert geen goedkeuring door de OpenID Foundation. (geen idee of dit nodig is)
+

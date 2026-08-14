@@ -58,7 +58,41 @@ _Geen openstaande pull requests._
 
 `Build and Check` #53 op `main` — publicatie naar `gitdocumentatie.logius.nl` geslaagd.
 
-<sub>Laatst bijgewerkt: 14 augustus 2026, 09:00 CEST · <a href="https://github.com/Logius-standaarden/authzen-nlgov/actions/workflows/readme.yml">workflow</a></sub> <!-- Hier moet een echte link komen naar een workflow -->
+<sub>Laatst bijgewerkt: 14 augustus 2026, 09:00 CEST · <a href="https://github.com/Logius-standaarden/authzen-nlgov/actions/workflows/readme.yml">workflow</a></sub> <!-- Hier moet een echte link komen naar een workflow, als we dit willen automatiseren -->
 <!-- BEHEER:END -->
+
+---
+
+## Over deze standaard
+
+AuthZEN is een standaard van de OpenID Foundation voor het uitwisselen van toegangsvragen en -beslissingen tussen een **Policy Enforcement Point (PEP)** en een **Policy Decision Point (PDP)**. Dit profiel legt vast hoe die uitwisseling er binnen de Nederlandse overheid uitziet: welke velden verplicht zijn, welk informatiemodel geldt, en welke eisen aan transport en beveiliging worden gesteld.
+
+Het profiel is ontwikkeld door VNG Realisatie vanuit een vernieuwingsvoorstel van de GDI, in het kader van het **Federatief Datastelsel (FDS)**. Beheer ligt bij Logius.
+
+```mermaid
+flowchart LR
+    PEP["Policy Enforcement Point<br/><i>applicatie / API</i>"]
+    PDP["Policy Decision Point<br/><i>autorisatievoorziening</i>"]
+    PIP["Policy Information Point<br/><i>attributenbron</i>"]
+
+    PEP -- "Access Evaluation Request" --> PDP
+    PDP -- "Access Evaluation Response<br/>(permit / deny)" --> PEP
+    PDP -.-> PIP
+    PDP -.-> ADL["Autorisatiebeslissingslog<br/><i>ADL</i>"]
+```
+
+<details> <!-- geen idee of we dit willen bijhouden maar ziet er wel nice uit -->
+<summary><b>Verwante standaarden en profielen</b></summary>
+
+<br/>
+
+| Standaard | Rol ten opzichte van dit profiel | Repository |
+|---|---|---|
+| Autorisatiebeslissingslog (ADL) | Vastleggen van genomen toegangsbeslissingen | [`authorization-decision-log`](https://github.com/Logius-standaarden/authorization-decision-log) |
+| NLgov Assurance profile for OAuth 2.0 | Levert het access token waarmee de PEP zich identificeert | [`OAuth-NL-profiel`](https://github.com/Logius-standaarden/OAuth-NL-profiel) |
+| NLgov Assurance profile for OpenID Connect | Levert de authenticatie van de eindgebruiker | [`OIDC-NLGOV`](https://github.com/Logius-standaarden/OIDC-NLGOV) |
+| NLgov Profile for CloudEvents | Notificatiepatroon bij wijzigende autorisaties | [`NL-GOV-profile-for-CloudEvents`](https://github.com/Logius-standaarden/NL-GOV-profile-for-CloudEvents) |
+
+</details>
 
 ---

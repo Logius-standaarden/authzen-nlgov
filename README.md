@@ -34,3 +34,31 @@
 | **Werkversie** | `develop` | Werkversie (WV) | 1.0.0 | 25 juni 2026 |
 
 > `develop` loopt **0 commits** voor op `main` — geen onverwerkte wijzigingen richting release.
+
+### Openstaande issues — 1 open, 0 gesloten
+
+| Status | Aantal | Issues |
+|---|---|---|
+| `Status: In onderzoek` | 1 | [#7](https://github.com/Logius-standaarden/authzen-nlgov/issues/7) |
+| `Status: In bewerking` | 0 | — |
+| `Status: Uitwerking door derden` | 0 | — |
+| `Status: Ter goedkeuring` | 0 | — |
+| `Status: Gereed` | 0 | — |
+| `Status: Klaar voor release` | 0 | — |
+| _zonder Status-label_ | 0 | — |
+
+- **Op de agenda van een overleg:** geen issues met een `Overleg:`-label.
+- **Niet behandeld** (geen `Type:`-label): geen.
+
+### Openstaande pull requests — 0 open
+
+_Geen openstaande pull requests._
+
+### Laatste geslaagde publicatie
+
+`Build and Check` #53 op `main` — publicatie naar `gitdocumentatie.logius.nl` geslaagd.
+
+<sub>Laatst bijgewerkt: 14 augustus 2026, 09:00 CEST · <a href="https://github.com/Logius-standaarden/authzen-nlgov/actions/workflows/readme.yml">workflow</a></sub> <!-- Hier moet een echte link komen naar een workflow -->
+<!-- BEHEER:END -->
+
+---

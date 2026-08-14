@@ -21,3 +21,16 @@
 </p>
 
 ---
+
+## Beheerstatus
+
+<!-- BEHEER:START -->
+<!-- Dit blok kan waarschijnlijk automatisch gegenereerd worden via .github/workflows/readme.yml.
+     Handmatige wijzigingen tussen BEHEER:START en BEHEER:END worden dan overschreven. -->
+
+| | Branch | Status | Versie | Publicatiedatum |
+|---|---|---|---|---|
+| **Vastgesteld** | `main` | Definitief (DEF) | 1.0.0 | 25 juni 2026 |
+| **Werkversie** | `develop` | Werkversie (WV) | 1.0.0 | 25 juni 2026 |
+
+> `develop` loopt **0 commits** voor op `main` — geen onverwerkte wijzigingen richting release.
